@@ -9,7 +9,6 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 	private RectTransform rectTransform;
 	private Image image;
 	public Canvas canvas;
-
 	public void OnBeginDrag(PointerEventData eventData)
 	{
 		image.color = new Color32(255, 255, 255, 170);
@@ -27,6 +26,8 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 	{
 		rectTransform = GetComponent<RectTransform>();
 		image = GetComponent<Image>();
+
+		canvas = GetComponentInParent<Canvas>();
 	}
 
 

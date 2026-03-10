@@ -11,6 +11,14 @@ public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void OnBeginDrag(PointerEventData eventData)
     {
         GameObject clone = Instantiate(flowerPrefab, tableArea);
+
+        FlowerSource fs = clone.GetComponent<FlowerSource>();
+        if (fs != null)
+            Destroy(fs);
+
+        if (clone.GetComponent<DragDrop>() == null)
+            clone.AddComponent<DragDrop>();
+
         currentFlower = clone.GetComponent<RectTransform>();
 
         Vector2 localPos;
@@ -24,6 +32,7 @@ public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         currentFlower.anchoredPosition = localPos;
         currentFlower.SetAsLastSibling();
     }
+
 
     public void OnDrag(PointerEventData eventData)
     {
