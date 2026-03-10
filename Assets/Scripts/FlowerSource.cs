@@ -3,19 +3,25 @@ using UnityEngine.EventSystems;
 
 public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public GameObject flowerPrefab;  
-    public Transform tableArea;     
+    public GameObject flowerPrefab;
+    public RectTransform tableArea;
 
     private RectTransform currentFlower;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-
         GameObject clone = Instantiate(flowerPrefab, tableArea);
         currentFlower = clone.GetComponent<RectTransform>();
 
-        currentFlower.position = Input.mousePosition;
+        Vector2 localPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            tableArea,
+            Input.mousePosition,
+            eventData.pressEventCamera,
+            out localPos
+        );
 
+        currentFlower.anchoredPosition = localPos;
         currentFlower.SetAsLastSibling();
     }
 
@@ -23,7 +29,15 @@ public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         if (currentFlower != null)
         {
-            currentFlower.position = Input.mousePosition;
+            Vector2 localPos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                tableArea,
+                Input.mousePosition,
+                eventData.pressEventCamera,
+                out localPos
+            );
+
+            currentFlower.anchoredPosition = localPos;
         }
     }
 

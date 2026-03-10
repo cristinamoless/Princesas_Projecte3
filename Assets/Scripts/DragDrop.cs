@@ -8,6 +8,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 {
 	private RectTransform rectTransform;
 	private Image image;
+	public Canvas canvas;
 
 	public void OnBeginDrag(PointerEventData eventData)
 	{
@@ -15,7 +16,7 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 	}
 	public void OnDrag(PointerEventData eventData)
 	{
-		rectTransform.anchoredPosition += eventData.delta;
+		rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
 	}
 	public void OnEndDrag(PointerEventData eventData)
 	{
