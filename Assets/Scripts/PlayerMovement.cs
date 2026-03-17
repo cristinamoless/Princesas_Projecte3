@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 velocity;
+    private Animator animator;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -20,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         float v = Input.GetAxis("Vertical");
 
         // Moviment en el pla XZ
-        Vector3 move = new Vector3(h, 0f, v);
+        Vector3 move = transform.TransformDirection(new Vector3(h, 0f, v));
 
         // Moure el personatge
         controller.Move(move * speed * Time.deltaTime);
@@ -33,5 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        float movementSpeed = move.magnitude * speed;
+        animator.SetFloat("speed", movementSpeed);
+
     }
 }
