@@ -10,6 +10,9 @@ public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (ToolManager.scissorsActive) return;
+        if (ToolManager.deleteActive) return;
+
         GameObject clone = Instantiate(flowerPrefab, tableArea);
 
         FlowerSource fs = clone.GetComponent<FlowerSource>();
@@ -18,6 +21,8 @@ public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
         if (clone.GetComponent<DragDrop>() == null)
             clone.AddComponent<DragDrop>();
+        if (clone.GetComponent<EditFlower>() == null)
+            clone.AddComponent<EditFlower>();
 
         currentFlower = clone.GetComponent<RectTransform>();
 
