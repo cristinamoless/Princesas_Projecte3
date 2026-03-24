@@ -20,6 +20,11 @@ public class Flower : MonoBehaviour
         if (img != null)
             img.sprite = withoutLeaves;
     }
+    public void Rotate(float angle)
+    {
+        RectTransform rt = GetComponent<RectTransform>();
+        rt.Rotate(0, 0, angle);
+    }
 
 
 }

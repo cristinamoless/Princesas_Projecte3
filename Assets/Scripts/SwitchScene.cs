@@ -5,6 +5,7 @@ using TMPro;
 public class SwitchScene : MonoBehaviour
 {
     public string sceneToLoad = "BuildFlower";
+    public string shop = "Floristeria";
     public TMP_Text text;
 
     private void Start()
@@ -22,5 +23,10 @@ public class SwitchScene : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         text.text = " ";
+    }
+
+    public void exitScene()
+    {
+        SceneManager.LoadScene(shop);
     }
 }

@@ -2,20 +2,22 @@ using UnityEngine;
 
 public class ToolManager : MonoBehaviour
 {
+    public static bool handActive = true;
     public static bool scissorsActive = false;
+    public static bool rotateActive = false;
     public static bool deleteActive = false;
 
-
-    public GameObject scissorsCursor;
     public GameObject handCursor;
+    public GameObject scissorsCursor;
+    public GameObject rotateCursor;
     public GameObject deleteCursor;
 
     void Start()
     {
         Cursor.visible = false;
-        scissorsActive = false;
         handCursor.SetActive(true);
         scissorsCursor.SetActive(false);
+        rotateCursor.SetActive(false);
         deleteCursor.SetActive(false);
     }
 
@@ -23,44 +25,66 @@ public class ToolManager : MonoBehaviour
     {
         Vector3 mousePos = Input.mousePosition;
 
-        if (scissorsActive)
+        if (handActive)
         {
-            scissorsCursor.SetActive(true);
+            handCursor.SetActive(true);
+            scissorsCursor.SetActive(false);
+            rotateCursor.SetActive(false);
+            deleteCursor.SetActive(false);
+            handCursor.transform.position = mousePos;
+        }
+        else if (scissorsActive)
+        {
             handCursor.SetActive(false);
+            scissorsCursor.SetActive(true);
+            rotateCursor.SetActive(false);
             deleteCursor.SetActive(false);
             scissorsCursor.transform.position = mousePos;
         }
+        else if (rotateActive)
+        {
+            handCursor.SetActive(false);
+            scissorsCursor.SetActive(false);
+            rotateCursor.SetActive(true);
+            deleteCursor.SetActive(false);
+            rotateCursor.transform.position = mousePos;
+        }
         else if (deleteActive)
         {
-            scissorsCursor.SetActive(false);
             handCursor.SetActive(false);
+            scissorsCursor.SetActive(false);
+            rotateCursor.SetActive(false);
             deleteCursor.SetActive(true);
             deleteCursor.transform.position = mousePos;
         }
-        else
-        {
-            scissorsCursor.SetActive(false);
-            handCursor.SetActive(true);
-            deleteCursor.SetActive(false);
-
-            handCursor.transform.position = mousePos;
-        }
-    }
-
-    public void ActivateScissors()
-    {
-        scissorsActive = true;
-        deleteActive = false;
     }
 
     public void ActivateHand()
     {
+        handActive = true;
         scissorsActive = false;
+        rotateActive = false;
+        deleteActive = false;
+    }
+    public void ActivateScissors()
+    {
+        handActive = false;
+        scissorsActive = true;
+        rotateActive = false;
+        deleteActive = false;
+    }
+    public void ActivateRotate()
+    {
+        handActive = false;
+        scissorsActive = false;
+        rotateActive = true;
         deleteActive = false;
     }
     public void ActivateDelete()
     {
-        deleteActive = true;
+        handActive = false;
         scissorsActive = false;
+        rotateActive = false;
+        deleteActive = true;
     }
 }
