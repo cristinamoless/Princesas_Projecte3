@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class Flower : MonoBehaviour
 {
     private Image img;
+    public FlowerType flowerType;
 
     public Sprite withLeaves;
     public Sprite withoutLeaves;

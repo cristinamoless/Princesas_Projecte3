@@ -8,6 +8,7 @@ public class ToolManager : MonoBehaviour
     public static bool deleteActive = false;
 
     public GameObject handCursor;
+    public GameObject handClosedCursor;
     public GameObject scissorsCursor;
     public GameObject rotateCursor;
     public GameObject deleteCursor;
@@ -27,7 +28,16 @@ public class ToolManager : MonoBehaviour
 
         if (handActive)
         {
-            handCursor.SetActive(true);
+            bool isClicking = Input.GetMouseButton(0);
+
+            handCursor.SetActive(!isClicking);
+            handClosedCursor.SetActive(isClicking);
+
+            if (isClicking)
+                handClosedCursor.transform.position = mousePos;
+            else
+                handCursor.transform.position = mousePos;
+
             scissorsCursor.SetActive(false);
             rotateCursor.SetActive(false);
             deleteCursor.SetActive(false);
