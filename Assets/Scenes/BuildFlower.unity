@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c44a243640073d43b1776fa16487455, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07cfee5978a84014c9dc6b622b164ae9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -779,11 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31723bf2044d7674da7e09679c00b701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowerType:
-    name: 
-    stars: 0
-  withLeaves: {fileID: 21300000, guid: 016964497cbaebf4380bcdd24770ad47, type: 3}
-  withoutLeaves: {fileID: 21300000, guid: c4369ed1ec34d5b4fa734780c04bd88e, type: 3}
+  flowerType: {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
 --- !u!114 &708951377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,11 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31723bf2044d7674da7e09679c00b701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowerType:
-    name: 
-    stars: 0
-  withLeaves: {fileID: 21300000, guid: ab0b91d4c4e97204e948e488a0b642b2, type: 3}
-  withoutLeaves: {fileID: 21300000, guid: c0fde29f8c38f4146bb2af1c3e5f5006, type: 3}
+  flowerType: {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
 --- !u!114 &959806622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,7 +1968,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c44a243640073d43b1776fa16487455, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07cfee5978a84014c9dc6b622b164ae9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

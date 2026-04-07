@@ -7,19 +7,16 @@ public class Flower : MonoBehaviour
     private Image img;
     public FlowerType flowerType;
 
-    public Sprite withLeaves;
-    public Sprite withoutLeaves;
-
     void Awake()
     {
         img = GetComponent<Image>();
-        img.sprite = withLeaves;
+        img.sprite = flowerType.withLeaves;
     }
 
     public void RemoveLeaves()
     {
         if (img != null)
-            img.sprite = withoutLeaves;
+            img.sprite = flowerType.withoutLeaves;
     }
     public void Rotate(float angle)
     {
