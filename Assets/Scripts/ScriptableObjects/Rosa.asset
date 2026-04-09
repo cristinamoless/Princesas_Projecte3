@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerName: Rosa
   stars: 200
+  seedPrice: 0
+  unlocked: 0
+  availableDay: 1
   withLeaves: {fileID: 21300000, guid: ab0b91d4c4e97204e948e488a0b642b2, type: 3}
   withoutLeaves: {fileID: 21300000, guid: c0fde29f8c38f4146bb2af1c3e5f5006, type: 3}

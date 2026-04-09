@@ -6,7 +6,7 @@ public class GameFlowManager : MonoBehaviour
     public ComandaManager comandaManager;
     public UIOrderDisplay uiOrder;
 
-    private int currentDay = 1;
+    public int currentDay = 1;
     private int comandaIndex = 0;
 
     void Start()
