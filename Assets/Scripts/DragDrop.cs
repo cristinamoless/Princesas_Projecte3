@@ -11,13 +11,13 @@ public class DragDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 	public Canvas canvas;
 	public void OnBeginDrag(PointerEventData eventData)
 	{
-		if (!ToolManager.handActive) return;
+		if (ToolManager.activeTool != ToolManager.ToolType.Hand) return;
 
 		image.color = new Color32(255, 255, 255, 170);
 	}
 	public void OnDrag(PointerEventData eventData)
 	{
-		if (!ToolManager.handActive) return;
+		if (ToolManager.activeTool != ToolManager.ToolType.Hand) return;
 
 		rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
 	}

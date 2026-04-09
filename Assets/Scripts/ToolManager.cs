@@ -2,99 +2,91 @@ using UnityEngine;
 
 public class ToolManager : MonoBehaviour
 {
-    public static bool handActive = true;
-    public static bool scissorsActive = false;
-    public static bool rotateActive = false;
-    public static bool deleteActive = false;
+    public enum ToolType
+    {
+        Hand,
+        Scissors,
+        Rotate,
+        Delete
+    }
+
+    public static ToolType activeTool = ToolType.Hand;
 
     public GameObject handCursor;
     public GameObject handClosedCursor;
     public GameObject scissorsCursor;
+    public GameObject scissorsClosedCursor;
     public GameObject rotateCursor;
     public GameObject deleteCursor;
 
     void Start()
     {
         Cursor.visible = false;
-        handCursor.SetActive(true);
-        scissorsCursor.SetActive(false);
-        rotateCursor.SetActive(false);
-        deleteCursor.SetActive(false);
+        SetCursor(ToolType.Hand);
     }
 
     void Update()
     {
         Vector3 mousePos = Input.mousePosition;
-
-        if (handActive)
-        {
-            bool isClicking = Input.GetMouseButton(0);
-
-            handCursor.SetActive(!isClicking);
-            handClosedCursor.SetActive(isClicking);
-
-            if (isClicking)
-                handClosedCursor.transform.position = mousePos;
-            else
-                handCursor.transform.position = mousePos;
-
-            scissorsCursor.SetActive(false);
-            rotateCursor.SetActive(false);
-            deleteCursor.SetActive(false);
-            handCursor.transform.position = mousePos;
-        }
-        else if (scissorsActive)
-        {
-            handCursor.SetActive(false);
-            scissorsCursor.SetActive(true);
-            rotateCursor.SetActive(false);
-            deleteCursor.SetActive(false);
-            scissorsCursor.transform.position = mousePos;
-        }
-        else if (rotateActive)
-        {
-            handCursor.SetActive(false);
-            scissorsCursor.SetActive(false);
-            rotateCursor.SetActive(true);
-            deleteCursor.SetActive(false);
-            rotateCursor.transform.position = mousePos;
-        }
-        else if (deleteActive)
-        {
-            handCursor.SetActive(false);
-            scissorsCursor.SetActive(false);
-            rotateCursor.SetActive(false);
-            deleteCursor.SetActive(true);
-            deleteCursor.transform.position = mousePos;
-        }
+        UpdateCursorPosition(mousePos);
     }
-
-    public void ActivateHand()
+    public void SetCursor(ToolType tool)
     {
-        handActive = true;
-        scissorsActive = false;
-        rotateActive = false;
-        deleteActive = false;
+        activeTool = tool;
+
+        handCursor.SetActive(tool == ToolType.Hand);
+        handClosedCursor.SetActive(false);
+        scissorsCursor.SetActive(tool == ToolType.Scissors);
+        scissorsClosedCursor.SetActive(false);
+        rotateCursor.SetActive(tool == ToolType.Rotate);
+        deleteCursor.SetActive(tool == ToolType.Delete);
     }
-    public void ActivateScissors()
+
+    void UpdateCursorPosition(Vector3 mousePos)
     {
-        handActive = false;
-        scissorsActive = true;
-        rotateActive = false;
-        deleteActive = false;
+        bool clicking = Input.GetMouseButton(0);
+        switch (activeTool)
+        {
+            case ToolType.Hand:
+                handCursor.SetActive(!clicking);
+                handClosedCursor.SetActive(clicking);
+
+                if (clicking)
+                    handClosedCursor.transform.position = mousePos;
+                else
+                    handCursor.transform.position = mousePos;
+                break;
+
+            case ToolType.Scissors:
+                scissorsCursor.SetActive(!clicking);
+                scissorsClosedCursor.SetActive(clicking);
+
+                if (clicking)
+                    scissorsClosedCursor.transform.position = mousePos;
+                else
+                    scissorsCursor.transform.position = mousePos;
+                break;
+
+            case ToolType.Rotate:
+                rotateCursor.transform.position = mousePos;
+                break;
+
+            case ToolType.Delete:
+                deleteCursor.transform.position = mousePos;
+                break;
+        }
     }
-    public void ActivateRotate()
-    {
-        handActive = false;
-        scissorsActive = false;
-        rotateActive = true;
-        deleteActive = false;
+    public void ActivateHand() {
+        SetCursor(ToolType.Hand);
     }
-    public void ActivateDelete()
-    {
-        handActive = false;
-        scissorsActive = false;
-        rotateActive = false;
-        deleteActive = true;
+    public void ActivateScissors() {
+        SetCursor(ToolType.Scissors);
     }
+    public void ActivateRotate() {
+        SetCursor(ToolType.Rotate);
+    }
+    public void ActivateDelete() {
+        SetCursor(ToolType.Delete);
+    }
+
 }

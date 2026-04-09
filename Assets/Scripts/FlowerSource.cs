@@ -10,7 +10,7 @@ public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!ToolManager.handActive) return;
+        if (ToolManager.activeTool != ToolManager.ToolType.Hand) return;
 
         GameObject clone = Instantiate(flowerPrefab, tableArea);
 

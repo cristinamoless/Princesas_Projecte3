@@ -18,7 +18,7 @@ public class EditFlower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (ToolManager.rotateActive)
+        if (ToolManager.activeTool == ToolManager.ToolType.Rotate)
         {
             rotating = true;
             lastAngle = GetMouseAngle(eventData.position);
@@ -32,7 +32,7 @@ public class EditFlower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (rotating && ToolManager.rotateActive)
+        if (rotating && ToolManager.activeTool == ToolManager.ToolType.Rotate)
         {
             float currentAngle = GetMouseAngle(eventData.position);
             float rotateAngle = currentAngle - lastAngle;
@@ -52,11 +52,11 @@ public class EditFlower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
 public void OnPointerClick(PointerEventData eventData)
     {
-        if (ToolManager.scissorsActive)
+        if (ToolManager.activeTool == ToolManager.ToolType.Scissors)
         {
             flower.RemoveLeaves();
         }
-        if (ToolManager.deleteActive)
+        if (ToolManager.activeTool == ToolManager.ToolType.Delete)
         {
             Destroy(gameObject);
         }

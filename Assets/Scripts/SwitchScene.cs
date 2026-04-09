@@ -4,8 +4,9 @@ using TMPro;
 
 public class SwitchScene : MonoBehaviour
 {
-    public string sceneToLoad = "BuildFlower";
+    public string build = "BuildFlower";
     public string shop = "Floristeria";
+    public string start = "MenuInicial";
     public TMP_Text text;
 
     private void Start()
@@ -17,7 +18,7 @@ public class SwitchScene : MonoBehaviour
         text.text = "Donali a la F si vols muntar flors";
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SceneManager.LoadScene(sceneToLoad);
+            SceneManager.LoadScene(build);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -25,7 +26,7 @@ public class SwitchScene : MonoBehaviour
         text.text = " ";
     }
 
-    public void exitScene()
+    public void shopScene()
     {
         SceneManager.LoadScene(shop);
     }
