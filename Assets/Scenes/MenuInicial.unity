@@ -432,7 +432,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1249281810}
         m_TargetAssemblyTypeName: SwitchScene, Assembly-CSharp
-        m_MethodName: shopScene
+        m_MethodName: creacioScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -493,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   build: BuildFlower
+  custom: CreacioPersonatje
   shop: Floristeria
   start: MenuInicial
   text: {fileID: 2100767251}
@@ -943,6 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   build: BuildFlower
+  custom: CreacioPersonatje
   shop: Floristeria
   start: MenuInicial
   text: {fileID: 1425430077}
