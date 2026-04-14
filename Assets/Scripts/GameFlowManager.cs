@@ -6,6 +6,9 @@ public class GameFlowManager : MonoBehaviour
     public ComandaManager comandaManager;
     public UIOrderDisplay uiOrder;
 
+    public GameObject repartidor;
+    public BuyFlower buyFlower;
+
     public int currentDay = 1;
     private int comandaIndex = 0;
 
@@ -18,6 +21,14 @@ public class GameFlowManager : MonoBehaviour
     {
         currentDay = day;
         comandaIndex = 0;
+
+        repartidor.SetActive(true);
+        buyFlower.showFlowers();
+    }
+
+    public void BeginClients()
+    {
+        repartidor.SetActive(false);
         LoadNextComanda();
     }
 
@@ -40,16 +51,12 @@ public class GameFlowManager : MonoBehaviour
 
         if (currentDay == 1 && comandaIndex >= database.day1Orders.Count)
         {
-            Debug.Log("Dia 1 complet!");
             StartDay(2);
             return;
         }
 
         if (currentDay == 2 && comandaIndex >= database.day2Orders.Count)
-        {
-            Debug.Log("Dia 2 complet!");
             return;
-        }
 
         LoadNextComanda();
     }

@@ -18,7 +18,8 @@ public class SwitchScene : MonoBehaviour
         text.text = "Donali a la F si vols muntar flors";
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SceneManager.LoadScene(build);
+            SceneManager.LoadScene(build, LoadSceneMode.Additive);
+
         }
     }
     private void OnTriggerExit(Collider other)

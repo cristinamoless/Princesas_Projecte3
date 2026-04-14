@@ -9,6 +9,12 @@ public class ComandaManager : MonoBehaviour
 
     public Comanda currentComanda;
 
+    void Start()
+    {
+        flow = FindFirstObjectByType<GameFlowManager>();
+        flow.comandaManager = this;
+    }
+
     public bool CheckOrder()
     {
         List<FlowerType> tableFlowers = table.GetFlowersOnTable();

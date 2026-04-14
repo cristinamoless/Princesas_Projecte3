@@ -3,26 +3,26 @@ using UnityEngine;
 
 public class TableManager : MonoBehaviour
 {
+    public Transform workArea; 
+
     public List<FlowerType> GetFlowersOnTable()
     {
-        List<FlowerType> bouquet = new List<FlowerType>();
+        List<FlowerType> result = new List<FlowerType>();
 
-        foreach (Transform child in transform)
+        foreach (Transform child in workArea)
         {
             Flower f = child.GetComponent<Flower>();
             if (f != null)
-                bouquet.Add(f.flowerType);
+                result.Add(f.flowerType);
         }
 
-        return bouquet;
+        return result;
     }
 
     public void ClearTable()
     {
-        foreach (Transform child in transform)
+        foreach (Transform child in workArea)
             Destroy(child.gameObject);
     }
-
-
-
 }
+
