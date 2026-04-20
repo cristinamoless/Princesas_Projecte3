@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BuildFlower.unity
     guid: 840939539574127458a845161b9e6367
   - enabled: 1
-    path: Assets/Scenes/CreacioPersonatje.unity
+    path: Assets/Scenes/CreacioPersonatge.unity
     guid: 32025d8a84004484b91de15b69043d98
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

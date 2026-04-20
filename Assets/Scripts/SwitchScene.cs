@@ -5,7 +5,7 @@ using TMPro;
 public class SwitchScene : MonoBehaviour
 {
     public string build = "BuildFlower";
-    public string custom = "CreacioPersonatje";
+    public string custom = "CreacioPersonatge";
     public string shop = "Floristeria";
     public string start = "MenuInicial";
     public TMP_Text text;
