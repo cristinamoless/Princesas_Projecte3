@@ -8,13 +8,20 @@ public class GameFlowManager : MonoBehaviour
 
     public GameObject repartidor;
     public BuyFlower buyFlower;
+    public GameObject dialeg;
+    public ComandaArea comandaArea;
 
     public int currentDay = 1;
     private int comandaIndex = 0;
+    public static bool start = true;
 
     void Start()
     {
-        StartDay(1);
+        if (start)
+        {
+            StartDay(1);
+            start = false;
+        }
     }
 
     public void StartDay(int day)
@@ -22,18 +29,21 @@ public class GameFlowManager : MonoBehaviour
         currentDay = day;
         comandaIndex = 0;
 
-        repartidor.SetActive(true);
         buyFlower.showFlowers();
+        repartidor.SetActive(true);
     }
-
     public void BeginClients()
     {
         repartidor.SetActive(false);
-        LoadNextComanda();
+    }
+    public void GetComanda()
+    {
+        dialeg.SetActive(true);
     }
 
     public void LoadNextComanda()
     {
+        dialeg.SetActive(false);
         Comanda next = null;
 
         if (currentDay == 1)
@@ -59,5 +69,6 @@ public class GameFlowManager : MonoBehaviour
             return;
 
         LoadNextComanda();
+        comandaArea.hasTalked = false;
     }
 }

@@ -15,24 +15,24 @@ MonoBehaviour:
   day1Orders:
   - clientName: Rock
     requiredFlowers:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
+    - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
+    - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
+    - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
     reward: 200
   - clientName: Estrella
     requiredFlowers:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
+    - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
+    - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
+    - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
     reward: 200
   - clientName: "Lloren\xE7"
     requiredFlowers:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
+    - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
+    - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
+    - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
     reward: 200
   day2Orders:
   - clientName: Gemma
