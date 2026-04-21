@@ -1,34 +1,35 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameFlowManager : MonoBehaviour
 {
     public DadesComanda database;
-    public ComandaManager comandaManager;
     public UIOrderDisplay uiOrder;
-
-    public GameObject repartidor;
     public BuyFlower buyFlower;
-    public GameObject dialeg;
     public ComandaArea comandaArea;
 
+    public GameObject repartidor;
+    public GameObject dialeg;
+
+    public Comanda currentComanda;
     public int currentDay = 1;
     private int comandaIndex = 0;
-    public static bool start = true;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
-        if (start)
-        {
-            StartDay(1);
-            start = false;
-        }
+        StartDay(1);
     }
-
     public void StartDay(int day)
     {
         currentDay = day;
         comandaIndex = 0;
 
+        GetComanda();
         buyFlower.showFlowers();
         repartidor.SetActive(true);
     }
@@ -36,23 +37,20 @@ public class GameFlowManager : MonoBehaviour
     {
         repartidor.SetActive(false);
     }
-    public void GetComanda()
+    public void TalkClients()
     {
         dialeg.SetActive(true);
     }
-
-    public void LoadNextComanda()
+    public void GetComanda()
     {
         dialeg.SetActive(false);
-        Comanda next = null;
 
         if (currentDay == 1)
-            next = database.day1Orders[comandaIndex];
-        else if (currentDay == 2)
-            next = database.day2Orders[comandaIndex];
+            currentComanda = database.day1Orders[comandaIndex];
+        else
+            currentComanda = database.day2Orders[comandaIndex];
 
-        comandaManager.currentComanda = next;
-        uiOrder.ShowOrder(next);
+        uiOrder.ShowOrder(currentComanda);
     }
 
     public void OnOrderConfirmed()
@@ -68,7 +66,7 @@ public class GameFlowManager : MonoBehaviour
         if (currentDay == 2 && comandaIndex >= database.day2Orders.Count)
             return;
 
-        LoadNextComanda();
+        GetComanda();
         comandaArea.hasTalked = false;
     }
 }

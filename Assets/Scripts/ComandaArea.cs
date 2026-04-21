@@ -19,7 +19,7 @@ public class ComandaArea : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             hasTalked = true;
-            gameFlow.GetComanda();
+            gameFlow.TalkClients();
             text.text = " ";
         }
     }

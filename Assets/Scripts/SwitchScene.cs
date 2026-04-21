@@ -32,6 +32,10 @@ public class SwitchScene : MonoBehaviour
     {
         SceneManager.LoadScene(shop);
     }
+    public void closeBuild()
+    {
+        SceneManager.UnloadSceneAsync(build);
+    }
     public void creacioScene()
     {
         SceneManager.LoadScene(custom);

@@ -4,15 +4,14 @@ using UnityEngine;
 public class ComandaManager : MonoBehaviour
 {
     public TableManager table;
-    public PlayerStars playerStars;
-    public GameFlowManager flow;
 
+    private GameFlowManager flow;
     public Comanda currentComanda;
 
     void Start()
     {
         flow = FindFirstObjectByType<GameFlowManager>();
-        flow.comandaManager = this;
+        currentComanda = flow.currentComanda;
     }
 
     public bool CheckOrder()
@@ -50,18 +49,19 @@ public class ComandaManager : MonoBehaviour
         if (CheckOrder())
         {
             int reward = CalculateReward(currentComanda);
-            playerStars.addStars(reward);
-
-            Debug.Log("Ram correcte! +" + reward + " estrelles");
+            PlayerStars.Instance.addStars(reward);
 
             table.ClearTable();
+
             flow.OnOrderConfirmed();
         }
         else
         {
-            Debug.Log("Ram incorrecte! No guanyes estrelles.");
+            Debug.Log("Ram incorrecte!");
         }
+
     }
+
     public int CalculateReward(Comanda c)
     {
         int total = 0;

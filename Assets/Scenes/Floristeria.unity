@@ -316,7 +316,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 790506082}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &110011286
 GameObject:
@@ -1156,7 +1156,7 @@ GameObject:
   - component: {fileID: 419263276}
   m_Layer: 0
   m_Name: Repartidor
-  m_TagString: Untagged
+  m_TagString: Repartidor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2499,12 +2499,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: e6b087931d9cdde42b793c0256d0966b, type: 2}
-  comandaManager: {fileID: 1532788916}
   uiOrder: {fileID: 1532788917}
-  repartidor: {fileID: 419263275}
   buyFlower: {fileID: 1741485718}
-  dialeg: {fileID: 1658427508}
   comandaArea: {fileID: 766510001}
+  repartidor: {fileID: 419263275}
+  dialeg: {fileID: 1658427508}
+  currentComanda:
+    clientName: 
+    requiredFlowers: []
+    reward: 0
   currentDay: 1
 --- !u!4 &790506082
 Transform:
@@ -2518,8 +2521,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 97512597}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &823528044
@@ -3446,7 +3448,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 790506081}
         m_TargetAssemblyTypeName: GameFlowManager, Assembly-CSharp
-        m_MethodName: LoadNextComanda
+        m_MethodName: GetComanda
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4860,7 +4862,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1532788915}
   - component: {fileID: 1532788917}
-  - component: {fileID: 1532788916}
   m_Layer: 0
   m_Name: Comandes
   m_TagString: Untagged
@@ -4885,25 +4886,6 @@ Transform:
   - {fileID: 1199741223}
   m_Father: {fileID: 1344861293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1532788916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532788914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1c942f801a70074ba07f9115f38a337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  table: {fileID: 0}
-  playerStars: {fileID: 0}
-  flow: {fileID: 0}
-  currentComanda:
-    clientName: 
-    requiredFlowers: []
-    reward: 0
 --- !u!114 &1532788917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5191,7 +5173,7 @@ GameObject:
   - component: {fileID: 1658427509}
   m_Layer: 0
   m_Name: Dialeg
-  m_TagString: Untagged
+  m_TagString: Dialeg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5381,7 +5363,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
   - {fileID: 11400000, guid: bf07348c295a546499f41c2c42f562da, type: 2}
   gfm: {fileID: 790506081}
-  ps: {fileID: 97512596}
   flowerButtons:
   - flower: {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
     button: {fileID: 1093404738}
@@ -7099,6 +7080,7 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1344861293}
   - {fileID: 1854938339}
+  - {fileID: 97512597}
   - {fileID: 790506082}
   - {fileID: 611889663}
   - {fileID: 1151892031}

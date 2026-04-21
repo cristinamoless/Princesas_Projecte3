@@ -5,7 +5,6 @@ public class BuyFlower : MonoBehaviour
 {
     public List<FlowerType> allFlowers;
     public GameFlowManager gfm;
-    public PlayerStars ps;
 
     [System.Serializable]
     public class FlowerButton
@@ -34,9 +33,9 @@ public class BuyFlower : MonoBehaviour
 
     public void buyFlower(FlowerType flower)
     {
-        if (ps.totalStars >= flower.seedPrice)
+        if (PlayerStars.Instance.totalStars >= flower.seedPrice)
         {
-            ps.totalStars -= flower.seedPrice;
+            PlayerStars.Instance.totalStars -= flower.seedPrice;
             flower.unlocked = true;
             Debug.Log("Has comprat: " + flower.flowerName);
         }
