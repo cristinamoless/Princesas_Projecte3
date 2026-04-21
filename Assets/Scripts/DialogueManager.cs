@@ -51,4 +51,17 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         agafarComandaButton.SetActive(true);
     }
+
+    void Update()
+{
+    if (!dialoguePanel.activeSelf) return;
+
+    if (Input.GetMouseButtonDown(0) || 
+        Input.GetKeyDown(KeyCode.Space) || 
+        Input.GetKeyDown(KeyCode.Return))
+    {
+        NextSentence();
+    }
+}
+
 }
