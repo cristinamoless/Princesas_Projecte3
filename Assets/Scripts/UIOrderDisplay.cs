@@ -14,4 +14,10 @@ public class UIOrderDisplay : MonoBehaviour
         foreach (var f in c.requiredFlowers)
             comandaText.text += "- " + f.name + "\n";
     }
+
+    public void ClearUI()
+    {
+        clientText.text = "";
+        comandaText.text = "";
+    }
 }

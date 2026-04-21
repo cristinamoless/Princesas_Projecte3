@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CharacterCustomizer : MonoBehaviour
 {
-    public Renderer shirtRenderer;        // El mesh renderer de la samarreta
-    public Texture[] shirtTextures;       // Les textures disponibles
+    public Renderer shirtRenderer;     
+    public Texture[] shirtTextures;      
 
     private int index = 0;
 
@@ -15,4 +15,13 @@ public class CharacterCustomizer : MonoBehaviour
 
         shirtRenderer.material.mainTexture = shirtTextures[index];
     }
+    public void PreviousShirt()
+    {
+        index--;
+        if (index < 0)
+            index = shirtTextures.Length - 1;
+
+        shirtRenderer.material.mainTexture = shirtTextures[index];
+    }
+
 }

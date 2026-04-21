@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class ComandaManager : MonoBehaviour
@@ -48,7 +49,7 @@ public class ComandaManager : MonoBehaviour
     {
         if (CheckOrder())
         {
-            int reward = CalculateReward(currentComanda);
+            int reward = currentComanda.reward;
             PlayerStars.Instance.addStars(reward);
 
             table.ClearTable();
@@ -58,17 +59,9 @@ public class ComandaManager : MonoBehaviour
         else
         {
             Debug.Log("Ram incorrecte!");
+            flow.OnOrderConfirmed();
         }
-
+        SceneManager.UnloadSceneAsync("BuildFlower");
     }
 
-    public int CalculateReward(Comanda c)
-    {
-        int total = 0;
-
-        foreach (var f in c.requiredFlowers)
-            total += f.stars;
-
-        return total;
-    }
 }
