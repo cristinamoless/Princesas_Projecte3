@@ -16,6 +16,11 @@ public class GameFlowManager : MonoBehaviour
     public int currentDay = 1;
     private int comandaIndex = 0;
 
+    public DialogueManager dialogueManager;
+    public Dialogue currentDialogue;
+    public Dialogue[] day1Dialogues;
+    public Dialogue[] day2Dialogues;
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -40,6 +45,13 @@ public class GameFlowManager : MonoBehaviour
     public void TalkClients()
     {
         dialeg.SetActive(true);
+
+        if (currentDay == 1)
+            currentDialogue = day1Dialogues[comandaIndex];
+        else
+            currentDialogue = day2Dialogues[comandaIndex];
+
+        dialogueManager.StartDialogue(currentDialogue);
     }
     public void GetComanda()
     {
