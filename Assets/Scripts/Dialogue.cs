@@ -1,10 +1,4 @@
 using UnityEngine;
-public enum DialogueType
-{
-    Initial,
-    Happy,
-    Sad
-}
 
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "Dialogue/Dialogue")]
 public class Dialogue : ScriptableObject
@@ -14,8 +8,4 @@ public class Dialogue : ScriptableObject
 
     [TextArea(3, 10)]
     public string[] sentences;
-
-    public int day;               
-    public int comandaIndex;         
-    public DialogueType type;      
 }
