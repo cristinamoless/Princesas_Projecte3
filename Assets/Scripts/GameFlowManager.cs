@@ -17,14 +17,11 @@ public class GameFlowManager : MonoBehaviour
     private int comandaIndex = 0;
 
     public DialogueManager dialogueManager;
+    public DialogueManager dialogueManagerRepartidor;
     public Dialogue currentDialogue;
-    public Dialogue[] day1Dialogues;
-    public Dialogue[] day2Dialogues;
-    public Dialogue[] day1HappyDialogues;
-    public Dialogue[] day1SadDialogues;
-    public Dialogue[] day2HappyDialogues;
-    public Dialogue[] day2SadDialogues;
+    public Dialogue[] allDialogues;
 
+    public CustomCursor cc;
 
     public bool lastOrderWasCorrect;
 
@@ -45,6 +42,8 @@ public class GameFlowManager : MonoBehaviour
 
         buyFlower.showFlowers();
         repartidor.SetActive(true);
+        currentDialogue = GetDialogue(currentDay, 0, DialogueType.Repartidor);
+        dialogueManagerRepartidor.StartDialogue(currentDialogue);
     }
     public void BeginClients()
     {
@@ -53,31 +52,42 @@ public class GameFlowManager : MonoBehaviour
     public void TalkClients()
     {
         dialeg.SetActive(true);
-
-        if (currentDay == 1)
-            currentDialogue = day1Dialogues[comandaIndex];
-        else
-            currentDialogue = day2Dialogues[comandaIndex];
-
+        dialogueManager.isDialogueInici = true;
+        currentDialogue = GetDialogue(currentDay, comandaIndex, DialogueType.Initial);
         dialogueManager.StartDialogue(currentDialogue);
     }
     public void GetComanda()
     {
         dialeg.SetActive(false);
-
-        if (currentDay == 1)
-            currentComanda = database.day1Orders[comandaIndex];
-        else
-            currentComanda = database.day2Orders[comandaIndex];
-
-        uiOrder.ShowOrder(currentComanda);
+        if (dialogueManager.isDialogueInici)
+        {
+            if (currentDay == 1)
+                currentComanda = database.day1Orders[comandaIndex];
+            else
+                currentComanda = database.day2Orders[comandaIndex];
+        
+            uiOrder.ShowOrder(currentComanda);
+        }
     }
 
     public void OnOrderConfirmed()
     {
+        bool correct = lastOrderWasCorrect;
+
         comandaIndex++;
         currentComanda = null;
         uiOrder.ClearUI();
+
+       Dialogue result = GetDialogue(
+            currentDay,
+            comandaIndex - 1,
+            correct ? DialogueType.Happy : DialogueType.Sad
+        );
+
+        
+        dialogueManager.isDialogueInici = false;
+        dialeg.SetActive(true);
+        dialogueManager.StartDialogue(result);
 
         if (currentDay == 1 && comandaIndex >= database.day1Orders.Count)
         {
@@ -85,32 +95,21 @@ public class GameFlowManager : MonoBehaviour
             return;
         }
 
-        if (currentDay == 2 && comandaIndex >= database.day2Orders.Count)
-            return;
-
         comandaArea.hasTalked = false;
+        cc.SetCursor();
     }
 
-    public void ShowResultDialogue()
+
+    public Dialogue GetDialogue(int day, int index, DialogueType type)
     {
-        dialeg.SetActive(true);
-        Dialogue result;
+        foreach (Dialogue d in allDialogues)
+        {
+            if (d.day == day && d.orderIndex == index && d.type == type)
+                return d;
+        }
 
-        if (currentDay == 1)
-        {
-            if (lastOrderWasCorrect)
-                result = day1HappyDialogues[comandaIndex - 1];
-            else
-                result = day1SadDialogues[comandaIndex - 1];
-        }
-        else
-        {
-            if (lastOrderWasCorrect)
-                result = day2HappyDialogues[comandaIndex - 1];
-            else
-                result = day2SadDialogues[comandaIndex - 1];
-        }
-        dialogueManager.StartDialogue(result);
+        return null;
     }
+
 
 }

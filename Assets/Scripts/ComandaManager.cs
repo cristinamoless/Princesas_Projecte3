@@ -48,16 +48,17 @@ public class ComandaManager : MonoBehaviour
     public void ConfirmOrder()
     {
        bool correct = CheckOrder();
-    flow.lastOrderWasCorrect = correct;
+        flow.lastOrderWasCorrect = correct;
 
-    if (correct)
-    {
-        int reward = currentComanda.reward;
-        PlayerStars.Instance.addStars(reward);
-    }
-    table.ClearTable();
-    flow.OnOrderConfirmed();
-    SceneManager.UnloadSceneAsync("BuildFlower");
+        if (correct)
+        {
+            int reward = currentComanda.reward;
+            PlayerStars.Instance.addStars(reward);
+        }
+        SceneManager.UnloadSceneAsync("BuildFlower");
+        table.ClearTable();
+        flow.OnOrderConfirmed();
+    
     }
 
 }

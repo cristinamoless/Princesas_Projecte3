@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bec23eb2d740e224aa77d0071ea82c3b, type: 3}
-  m_Name: IniciRockDia1 1
+  m_Name: HappyRockDia1
   m_EditorClassIdentifier: 
   characterName: Rock
-  characterPixel: {fileID: 21300000, guid: 9aa3add6b4c927d438d76d2a5d2e3684, type: 3}
+  characterPixel: {fileID: 21300000, guid: 49ca2ca02b9606a41819020fc8bf4ae3, type: 3}
   sentences:
   - "Oh! S\xF3n perfectes {playerName} , li encantaran. "
   - "Tamb\xE9 donar\xE9 veu a la teva bona feina pel poble. Espero veure\u2019t m\xE9s
     per aqu\xED!!!\r"
+  day: 1
+  orderIndex: 0
+  type: 1

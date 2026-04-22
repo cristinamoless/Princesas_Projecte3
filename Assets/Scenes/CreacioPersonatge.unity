@@ -449,7 +449,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_KeepTextSelectionVisible: 0
@@ -556,8 +556,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LA TEVA FLOR PREFERIDA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
-  m_sharedMaterial: {fileID: 7355146554397719854, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
+  m_sharedMaterial: {fileID: -2091088827478307952, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -829,8 +829,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
+  m_sharedMaterial: {fileID: -2091088827478307952, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1086,8 +1086,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
+  m_sharedMaterial: {fileID: -2091088827478307952, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1435,10 +1435,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: el teu nom
+  m_text: EL TEU NOM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
-  m_sharedMaterial: {fileID: 7355146554397719854, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
+  m_sharedMaterial: {fileID: -2091088827478307952, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2037,7 +2037,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_KeepTextSelectionVisible: 0
@@ -2112,7 +2112,7 @@ GameObject:
   - component: {fileID: 1438785783}
   - component: {fileID: 1438785782}
   m_Layer: 5
-  m_Name: el_teu_nom (1)
+  m_Name: tria_samarreta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2159,8 +2159,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: TRIA LA TEVA SAMARRETA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
-  m_sharedMaterial: {fileID: 7355146554397719854, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
+  m_sharedMaterial: {fileID: -2091088827478307952, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2467,8 +2467,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
-  m_sharedMaterial: {fileID: 7355146554397719854, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
+  m_sharedMaterial: {fileID: -2091088827478307952, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2624,8 +2624,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
-  m_sharedMaterial: {fileID: 7355146554397719854, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
+  m_sharedMaterial: {fileID: -2091088827478307952, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2984,7 +2984,7 @@ GameObject:
   - component: {fileID: 1942528322}
   - component: {fileID: 1942528321}
   m_Layer: 5
-  m_Name: el_teu_nom (2)
+  m_Name: benvinguda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3029,10 +3029,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BENVINGUDAb SIUSPLAU EMPLENA ELS SEGUENTS CAMPS!
+  m_text: BENVINGUDA, SIUSPLAU EMPLENA ELS SEGUENTS CAMPS!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
-  m_sharedMaterial: {fileID: 7355146554397719854, guid: 5c6dec5518ef86c4994f1e7b768d5ae7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
+  m_sharedMaterial: {fileID: -2091088827478307952, guid: f7b7f54de0d5e34459c09b588ebda816, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

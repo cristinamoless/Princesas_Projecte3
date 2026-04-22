@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject dialoguePanel;
     public GameObject agafarComandaButton;
-
+    public bool isDialogueInici = true;
     private Dialogue dialogue;
     private int index = 0;
 
