@@ -10,20 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bec23eb2d740e224aa77d0071ea82c3b, type: 3}
-  m_Name: IniciRockDia1
+  m_Name: HappyEstrellaDia1
   m_EditorClassIdentifier: 
-  characterName: Rock
+  characterName: Estrella
   characterPixel: {fileID: 21300000, guid: 9aa3add6b4c927d438d76d2a5d2e3684, type: 3}
   sentences:
-  - 'Encantat, soc en Rock :)
-
-'
-  - 'Venia a preguntar si tenies flors vermelles. '
-  - "Avui \xE9s l\u2019aniversari de la meva xicota, i el vermell \xE9s el seu color
-    preferit\u2026\r\n"
-  - "S\xED que en tens!? Quina il\xB7lusi\xF3."
-  - "Doncs t\u2019encomano un ram de flors vermelles, m\u2019espero que el facis,
-    estar\xE9 per aqu\xED divagant. "
+  - "Oh, \xE9s preci\xF3s! Hi tens molta tra\xE7a, floreta.  "
+  - "No dubtis en qu\xE8 tornar\xE9 a passar-me d\u2019aqu\xED a uns dies!\r"
+  - "Aqu\xED tens. Adeu!!"
   day: 1
-  comandaIndex: 0
-  type: 0
+  comandaIndex: 1
+  type: 1
