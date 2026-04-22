@@ -9,7 +9,9 @@ public class DialogueManager : MonoBehaviour
     public Image characterImage;
 
     public GameObject dialoguePanel;
-    public GameObject agafarComandaButton;
+
+    public GameObject botoAgafarComanda;
+    public bool isDialogueInici = true;
 
     private Dialogue dialogue;
     private int index = 0;
@@ -20,7 +22,7 @@ public class DialogueManager : MonoBehaviour
         index = 0;
 
         dialoguePanel.SetActive(true);
-        agafarComandaButton.SetActive(false);
+        botoAgafarComanda.SetActive(false);
 
         nameText.text = dialogue.characterName;
         characterImage.sprite = dialogue.characterPixel;
@@ -54,19 +56,19 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialoguePanel.SetActive(false);
-        agafarComandaButton.SetActive(true);
+        botoAgafarComanda.SetActive(true);
     }
 
     void Update()
 {
-    if (!dialoguePanel.activeSelf) return;
+        if (!dialoguePanel.activeSelf) return;
 
-    if (Input.GetMouseButtonDown(0) || 
-        Input.GetKeyDown(KeyCode.Space) || 
-        Input.GetKeyDown(KeyCode.Return))
-    {
-        NextSentence();
+        if (Input.GetMouseButtonDown(0) || 
+            Input.GetKeyDown(KeyCode.Space) || 
+            Input.GetKeyDown(KeyCode.Return))
+        {
+            NextSentence();
+        }
     }
-}
 
 }

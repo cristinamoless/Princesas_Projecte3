@@ -1,14 +1,14 @@
 using UnityEngine;
 
 public class CustomCursor : MonoBehaviour
-{ 
+{
     public Texture2D normalCursor;
     public Texture2D clickCursor;
     public Vector2 hotspot = Vector2.zero;
 
     void Start()
     {
-        Cursor.SetCursor(normalCursor, hotspot, CursorMode.Auto);
+        SetCursor();
     }
 
     void Update()
@@ -22,5 +22,12 @@ public class CustomCursor : MonoBehaviour
         {
             Cursor.SetCursor(normalCursor, hotspot, CursorMode.Auto);
         }
+    }
+    
+    public void SetCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.SetCursor(normalCursor, hotspot, CursorMode.Auto);
     }
 }
