@@ -21,6 +21,8 @@ public class ComandaArea : MonoBehaviour
             hasTalked = true;
             gameFlow.TalkClients();
             text.text = " ";
+            FindFirstObjectByType<RockNPC>().StopWaving();
+
         }
     }
     private void OnTriggerExit(Collider other)
