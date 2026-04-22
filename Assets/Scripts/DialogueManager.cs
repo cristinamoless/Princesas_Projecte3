@@ -43,8 +43,13 @@ public class DialogueManager : MonoBehaviour
 
     void ShowSentence()
     {
-        dialogueText.text = dialogue.sentences[index];
+        string s = dialogue.sentences[index];
+
+        s = s.Replace("{playerName}", PlayerPrefs.GetString("playerName"));
+
+        dialogueText.text = s;
     }
+
 
     void EndDialogue()
     {

@@ -20,6 +20,14 @@ public class GameFlowManager : MonoBehaviour
     public Dialogue currentDialogue;
     public Dialogue[] day1Dialogues;
     public Dialogue[] day2Dialogues;
+    public Dialogue[] day1HappyDialogues;
+    public Dialogue[] day1SadDialogues;
+    public Dialogue[] day2HappyDialogues;
+    public Dialogue[] day2SadDialogues;
+
+
+    public bool lastOrderWasCorrect;
+
 
     void Awake()
     {
@@ -82,4 +90,27 @@ public class GameFlowManager : MonoBehaviour
 
         comandaArea.hasTalked = false;
     }
+
+    public void ShowResultDialogue()
+    {
+        dialeg.SetActive(true);
+        Dialogue result;
+
+        if (currentDay == 1)
+        {
+            if (lastOrderWasCorrect)
+                result = day1HappyDialogues[comandaIndex - 1];
+            else
+                result = day1SadDialogues[comandaIndex - 1];
+        }
+        else
+        {
+            if (lastOrderWasCorrect)
+                result = day2HappyDialogues[comandaIndex - 1];
+            else
+                result = day2SadDialogues[comandaIndex - 1];
+        }
+        dialogueManager.StartDialogue(result);
+    }
+
 }
