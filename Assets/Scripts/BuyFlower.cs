@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BuyFlower : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class BuyFlower : MonoBehaviour
     }
 
     public List<FlowerButton> flowerButtons;
+
+    public GameObject marcComprar;      
+    public GameObject perComprar;      
+    public GameObject comprat;         
+    public TMP_Text confirmText;        
+    public TMP_Text resultText;         
+
+    private FlowerType selectedFlower;
 
     public void showFlowers()
     {
@@ -31,17 +40,53 @@ public class BuyFlower : MonoBehaviour
         }
     }
 
-    public void buyFlower(FlowerType flower)
+    public void AskToBuy(FlowerType flower)
     {
-        if (PlayerStars.Instance.totalStars >= flower.seedPrice)
+        selectedFlower = flower;
+
+        marcComprar.SetActive(true);
+        perComprar.SetActive(true);
+        comprat.SetActive(false);
+
+        confirmText.text =
+            $"Vols comprar llavors de {flower.flowerName} per {flower.seedPrice} estrelles?";
+    }
+
+    public void CancelBuy()
+    {
+        marcComprar.SetActive(false);
+        perComprar.SetActive(false);
+        comprat.SetActive(false);
+    }
+
+    public void ConfirmBuy()
+    {
+        perComprar.SetActive(false);
+        comprat.SetActive(true);
+
+        if (PlayerStars.Instance.totalStars >= selectedFlower.seedPrice)
         {
-            PlayerStars.Instance.totalStars -= flower.seedPrice;
-            flower.unlocked = true;
-            Debug.Log("Has comprat: " + flower.flowerName);
+            PlayerStars.Instance.totalStars -= selectedFlower.seedPrice;
+            selectedFlower.unlocked = true;
+
+            resultText.text = "COMPRAT!";
+            showFlowers(); 
         }
         else
         {
-            Debug.Log("No tens prou estrelles!");
+            resultText.text = "No tens prou estrelles!";
         }
     }
+    void Update()
+    {
+        if (comprat.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                comprat.SetActive(false);
+                marcComprar.SetActive(false);
+            }
+        }
+    }
+
 }

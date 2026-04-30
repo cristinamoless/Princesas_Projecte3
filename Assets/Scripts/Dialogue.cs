@@ -18,5 +18,5 @@ public class Dialogue : ScriptableObject
 
     public int day;                
     public int orderIndex;         
-    public DialogueType type;      
+    public DialogueType type;
 }
