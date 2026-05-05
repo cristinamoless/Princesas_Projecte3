@@ -6649,6 +6649,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 730206121}
   agafarComandaButton: {fileID: 849409527}
   isDialogueInici: 1
+  choiceButtonA: {fileID: 0}
+  choiceButtonB: {fileID: 0}
 --- !u!114 &730206124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7536,6 +7538,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8c9f54e102574b24d9cb8b29f0e3f1f8, type: 2}
   - {fileID: 11400000, guid: 33399f445205ecf418ef21546cfa48d7, type: 2}
   - {fileID: 11400000, guid: f101390da7821f34791d7e446add3b9d, type: 2}
+  - {fileID: 11400000, guid: 352c5423e5274654baa18a1c71a2d9ac, type: 2}
+  - {fileID: 11400000, guid: 84ea37f3a519c244e92602f8422c15d5, type: 2}
+  - {fileID: 11400000, guid: b861e4f80da0e0e4d8fa95ff6980534e, type: 2}
+  - {fileID: 11400000, guid: 2eb5aaa69b3392b4dbab085a242b8c91, type: 2}
+  - {fileID: 11400000, guid: 13aea2fd0a282f44ba5b94dd001f132a, type: 2}
   cc: {fileID: 0}
   lastOrderWasCorrect: 0
 --- !u!4 &790506082
@@ -15003,6 +15010,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 871318431}
   agafarComandaButton: {fileID: 1033580211}
   isDialogueInici: 1
+  choiceButtonA: {fileID: 0}
+  choiceButtonB: {fileID: 0}
 --- !u!1001 &1661131758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15957,6 +15966,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1755713197}
   agafarComandaButton: {fileID: 849409527}
   isDialogueInici: 1
+  choiceButtonA: {fileID: 0}
+  choiceButtonB: {fileID: 0}
 --- !u!1001 &1761016085
 PrefabInstance:
   m_ObjectHideFlags: 0

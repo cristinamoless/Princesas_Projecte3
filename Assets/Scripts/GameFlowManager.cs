@@ -24,7 +24,7 @@ public class GameFlowManager : MonoBehaviour
     public CustomCursor cc;
 
     public bool lastOrderWasCorrect;
-
+    private bool waitingForFinalDialogue = false;
 
     void Awake()
     {
@@ -78,13 +78,20 @@ public class GameFlowManager : MonoBehaviour
         currentComanda = null;
         uiOrder.ClearUI();
 
-       Dialogue result = GetDialogue(
-            currentDay,
-            comandaIndex - 1,
-            correct ? DialogueType.Happy : DialogueType.Sad
-        );
+        Dialogue result = null;
 
-        
+        if (correct)
+        {
+            result = GetDialogue(currentDay, comandaIndex - 1, DialogueType.Choice);
+
+            if (result == null)
+                result = GetDialogue(currentDay, comandaIndex - 1, DialogueType.Happy);
+        }
+        else
+        {
+            result = GetDialogue(currentDay, comandaIndex - 1, DialogueType.Sad);
+        }
+
         dialogueManager.isDialogueInici = false;
         dialeg.SetActive(true);
         dialogueManager.StartDialogue(result);
