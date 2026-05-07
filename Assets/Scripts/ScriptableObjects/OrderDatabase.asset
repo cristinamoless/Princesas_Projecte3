@@ -13,21 +13,24 @@ MonoBehaviour:
   m_Name: OrderDatabase
   m_EditorClassIdentifier: 
   day1Orders:
-  - clientName: Rock
+  - nomComanda: x4 ROSES
+    clientName: Rock
     requiredFlowers:
     - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
     - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
     - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
     - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
     reward: 200
-  - clientName: Estrella
+  - nomComanda: X4 MARGARIDES
+    clientName: Estrella
     requiredFlowers:
     - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
     - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
     - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
     - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
     reward: 200
-  - clientName: "Lloren\xE7"
+  - nomComanda: X2 ROSES             X2 MARGARIDES
+    clientName: "Lloren\xE7"
     requiredFlowers:
     - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
     - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
@@ -35,21 +38,24 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
     reward: 200
   day2Orders:
-  - clientName: Gemma
+  - nomComanda: 
+    clientName: Gemma
     requiredFlowers:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     reward: 400
-  - clientName: Marc
+  - nomComanda: 
+    clientName: Marc
     requiredFlowers:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     reward: 300
-  - clientName: Maria
+  - nomComanda: 
+    clientName: Maria
     requiredFlowers:
     - {fileID: 0}
     - {fileID: 0}

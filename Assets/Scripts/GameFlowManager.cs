@@ -1,16 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameFlowManager : MonoBehaviour
 {
     public DadesComanda database;
-    public UIOrderDisplay uiOrder;
+    public OrderDisplay uiOrder;
     public BuyFlower buyFlower;
     public ComandaArea comandaArea;
 
     public GameObject repartidor;
     public GameObject dialeg;
     public GameObject fiDia;
+    public GameObject date;
 
     public Comanda currentComanda;
     public int currentDay = 1;
@@ -26,6 +28,8 @@ public class GameFlowManager : MonoBehaviour
     public bool lastOrderWasCorrect;
     private bool waitingForFinalDialogue = false;
 
+    public List<CompletedOrderInfo> completedOrders = new List<CompletedOrderInfo>();
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -33,22 +37,28 @@ public class GameFlowManager : MonoBehaviour
 
     void Start()
     {
-        StartDay(1);
+        currentDay = 0;
+        StartDay();
     }
-    public void StartDay(int day)
+
+    public void StartDay()
     {
-        currentDay = day;
+        currentDay++;
         comandaIndex = 0;
 
+        date.SetActive(true);
+        fiDia.SetActive(false);
         buyFlower.showFlowers();
         repartidor.SetActive(true);
         currentDialogue = GetDialogue(currentDay, 0, DialogueType.Repartidor);
         dialogueManagerRepartidor.StartDialogue(currentDialogue);
     }
+
     public void BeginClients()
     {
         repartidor.SetActive(false);
     }
+
     public void TalkClients()
     {
         dialeg.SetActive(true);
@@ -56,6 +66,7 @@ public class GameFlowManager : MonoBehaviour
         currentDialogue = GetDialogue(currentDay, comandaIndex, DialogueType.Initial);
         dialogueManager.StartDialogue(currentDialogue);
     }
+
     public void GetComanda()
     {
         dialeg.SetActive(false);
@@ -65,7 +76,7 @@ public class GameFlowManager : MonoBehaviour
                 currentComanda = database.day1Orders[comandaIndex];
             else
                 currentComanda = database.day2Orders[comandaIndex];
-        
+
             uiOrder.ShowOrder(currentComanda);
         }
     }
@@ -73,6 +84,14 @@ public class GameFlowManager : MonoBehaviour
     public void OnOrderConfirmed()
     {
         bool correct = lastOrderWasCorrect;
+
+        var list = currentDay == 1 ? database.day1Orders : database.day2Orders;
+
+        completedOrders.Add(new CompletedOrderInfo
+        {
+            comanda = list[comandaIndex],
+            wasCorrect = correct
+        });
 
         comandaIndex++;
         currentComanda = null;
@@ -98,14 +117,23 @@ public class GameFlowManager : MonoBehaviour
 
         if (currentDay == 1 && comandaIndex >= database.day1Orders.Count)
         {
-            fiDia.SetActive(true);
-            return;
+            waitingForFinalDialogue = true;
         }
 
         comandaArea.hasTalked = false;
         cc.SetCursor();
     }
 
+    public void OnDialogueEnded()
+    {
+        if (waitingForFinalDialogue)
+        {
+            fiDia.SetActive(true);
+            date.SetActive(false);
+            uiOrder.ShowEndOfDay(completedOrders);
+            waitingForFinalDialogue = false;
+        }
+    }
 
     public Dialogue GetDialogue(int day, int index, DialogueType type)
     {
@@ -117,6 +145,4 @@ public class GameFlowManager : MonoBehaviour
 
         return null;
     }
-
-
 }

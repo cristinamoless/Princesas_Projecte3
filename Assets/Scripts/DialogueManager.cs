@@ -7,10 +7,12 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
     public Image characterImage;
+    public GameFlowManager gfm;
 
     public GameObject dialoguePanel;
     public GameObject agafarComandaButton;
     public bool isDialogueInici = true;
+
     private Dialogue dialogue;
     private int index = 0;
 
@@ -25,6 +27,9 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         agafarComandaButton.SetActive(false);
 
+        choiceButtonA.gameObject.SetActive(false);
+        choiceButtonB.gameObject.SetActive(false);
+
         nameText.text = dialogue.characterName;
         characterImage.sprite = dialogue.characterPixel;
 
@@ -37,6 +42,12 @@ public class DialogueManager : MonoBehaviour
 
         if (index >= dialogue.sentences.Length)
         {
+            if (dialogue.choices != null && dialogue.choices.Length > 0)
+            {
+                ShowSimpleChoices();
+                return;
+            }
+
             EndDialogue();
             return;
         }
@@ -47,74 +58,59 @@ public class DialogueManager : MonoBehaviour
     void ShowSentence()
     {
         string s = dialogue.sentences[index];
-
         s = s.Replace("{playerName}", PlayerPrefs.GetString("playerName"));
-
         dialogueText.text = s;
     }
 
-
     void EndDialogue()
     {
-        if (dialogue.choices != null && dialogue.choices.Length > 0)
-        {
-            ShowSimpleChoices();
-            return;
-        }
         dialoguePanel.SetActive(false);
         agafarComandaButton.SetActive(true);
+
+        gfm.OnDialogueEnded();
     }
 
     void Update()
     {
         if (!dialoguePanel.activeSelf) return;
 
-        if (Input.GetMouseButtonDown(0) || 
-            Input.GetKeyDown(KeyCode.Space) || 
+        if (Input.GetMouseButtonDown(0) ||
+            Input.GetKeyDown(KeyCode.Space) ||
             Input.GetKeyDown(KeyCode.Return))
         {
             NextSentence();
         }
     }
+
     void ShowSimpleChoices()
     {
-        dialogueText.text = ""; 
+        dialogueText.text = "";
 
         choiceButtonA.gameObject.SetActive(true);
-        choiceButtonB.gameObject.SetActive(true);
-
         choiceButtonA.GetComponentInChildren<TMP_Text>().text = dialogue.choices[0].choiceText;
+
+        choiceButtonA.onClick.RemoveAllListeners();
+        choiceButtonA.onClick.AddListener(() => SelectChoice(0));
 
         if (dialogue.choices.Length > 1)
         {
-            choiceButtonB.GetComponentInChildren<TMP_Text>().text = dialogue.choices[1].choiceText;
             choiceButtonB.gameObject.SetActive(true);
+            choiceButtonB.GetComponentInChildren<TMP_Text>().text = dialogue.choices[1].choiceText;
+
+            choiceButtonB.onClick.RemoveAllListeners();
+            choiceButtonB.onClick.AddListener(() => SelectChoice(1));
         }
         else
         {
             choiceButtonB.gameObject.SetActive(false);
         }
-
-        choiceButtonA.onClick.RemoveAllListeners();
-        choiceButtonA.onClick.AddListener(() =>
-        {
-            SelectChoice(0);
-        });
-
-        if (dialogue.choices.Length > 1)
-        {
-            choiceButtonB.onClick.RemoveAllListeners();
-            choiceButtonB.onClick.AddListener(() =>
-            {
-                SelectChoice(1);
-            });
-        }
     }
-    void SelectChoice(int index)
+
+    void SelectChoice(int choiceIndex)
     {
         choiceButtonA.gameObject.SetActive(false);
         choiceButtonB.gameObject.SetActive(false);
 
-        StartDialogue(dialogue.choices[index].nextDialogue);
+        StartDialogue(dialogue.choices[choiceIndex].nextDialogue);
     }
 }
