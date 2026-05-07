@@ -299,13 +299,19 @@ MonoBehaviour:
       m_HorizontalBearingY: 72
       m_HorizontalAdvance: 67.859375
     m_GlyphRect:
+<<<<<<< Updated upstream
       m_X: 10
       m_Y: 555
+=======
+      m_X: 376
+      m_Y: 205
+>>>>>>> Stashed changes
       m_Width: 60
       m_Height: 90
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+<<<<<<< Updated upstream
   - m_Index: 9
     m_Metrics:
       m_Width: 37.609375
@@ -321,6 +327,8 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+=======
+>>>>>>> Stashed changes
   - m_Index: 10
     m_Metrics:
       m_Width: 36.984375
@@ -329,8 +337,13 @@ MonoBehaviour:
       m_HorizontalBearingY: 71.015625
       m_HorizontalAdvance: 45.984375
     m_GlyphRect:
+<<<<<<< Updated upstream
       m_X: 10
       m_Y: 10
+=======
+      m_X: 335
+      m_Y: 401
+>>>>>>> Stashed changes
       m_Width: 38
       m_Height: 90
     m_Scale: 1
@@ -344,13 +357,19 @@ MonoBehaviour:
       m_HorizontalBearingY: 72
       m_HorizontalAdvance: 46.625
     m_GlyphRect:
+<<<<<<< Updated upstream
       m_X: 10
       m_Y: 119
+=======
+      m_X: 378
+      m_Y: 510
+>>>>>>> Stashed changes
       m_Width: 39
       m_Height: 90
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+<<<<<<< Updated upstream
   - m_Index: 12
     m_Metrics:
       m_Width: 56.609375
@@ -396,6 +415,8 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+=======
+>>>>>>> Stashed changes
   - m_Index: 17
     m_Metrics:
       m_Width: 56.609375
@@ -404,8 +425,13 @@ MonoBehaviour:
       m_HorizontalBearingY: 72
       m_HorizontalAdvance: 65.609375
     m_GlyphRect:
+<<<<<<< Updated upstream
       m_X: 67
       m_Y: 10
+=======
+      m_X: 392
+      m_Y: 401
+>>>>>>> Stashed changes
       m_Width: 58
       m_Height: 90
     m_Scale: 1
@@ -539,8 +565,13 @@ MonoBehaviour:
       m_HorizontalBearingY: 72
       m_HorizontalAdvance: 65.609375
     m_GlyphRect:
+<<<<<<< Updated upstream
       m_X: 366
       m_Y: 402
+=======
+      m_X: 405
+      m_Y: 619
+>>>>>>> Stashed changes
       m_Width: 58
       m_Height: 90
     m_Scale: 1
@@ -1139,8 +1170,13 @@ MonoBehaviour:
       m_HorizontalBearingY: 47.609375
       m_HorizontalAdvance: 62.640625
     m_GlyphRect:
+<<<<<<< Updated upstream
       m_X: 332
       m_Y: 938
+=======
+      m_X: 436
+      m_Y: 314
+>>>>>>> Stashed changes
       m_Width: 55
       m_Height: 66
     m_Scale: 1
@@ -1236,6 +1272,7 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+<<<<<<< Updated upstream
   - m_Index: 79
     m_Metrics:
       m_Width: 70.734375
@@ -1251,6 +1288,8 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+=======
+>>>>>>> Stashed changes
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 13
@@ -1277,10 +1316,13 @@ MonoBehaviour:
     m_GlyphIndex: 8
     m_Scale: 1
   - m_ElementType: 1
+<<<<<<< Updated upstream
     m_Unicode: 49
     m_GlyphIndex: 9
     m_Scale: 1
   - m_ElementType: 1
+=======
+>>>>>>> Stashed changes
     m_Unicode: 50
     m_GlyphIndex: 10
     m_Scale: 1
@@ -1289,6 +1331,7 @@ MonoBehaviour:
     m_GlyphIndex: 11
     m_Scale: 1
   - m_ElementType: 1
+<<<<<<< Updated upstream
     m_Unicode: 52
     m_GlyphIndex: 12
     m_Scale: 1
@@ -1301,6 +1344,8 @@ MonoBehaviour:
     m_GlyphIndex: 16
     m_Scale: 1
   - m_ElementType: 1
+=======
+>>>>>>> Stashed changes
     m_Unicode: 57
     m_GlyphIndex: 17
     m_Scale: 1
@@ -1524,10 +1569,13 @@ MonoBehaviour:
     m_Unicode: 237
     m_GlyphIndex: 78
     m_Scale: 1
+<<<<<<< Updated upstream
   - m_ElementType: 1
     m_Unicode: 242
     m_GlyphIndex: 79
     m_Scale: 1
+=======
+>>>>>>> Stashed changes
   m_AtlasTextures:
   - {fileID: -3454691709052749810}
   m_AtlasTextureIndex: 0
