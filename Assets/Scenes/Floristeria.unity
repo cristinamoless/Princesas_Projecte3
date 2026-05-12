@@ -9096,6 +9096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 852332346}
   - component: {fileID: 852332347}
+  - component: {fileID: 852332348}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -9133,6 +9134,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 7e1452386436d15489b415fa7634db9e, type: 2}
   volumeSlider: {fileID: 262853638}
+--- !u!114 &852332348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852332344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7607dfbffe01f41aed12587f5d30dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 1088004264}
 --- !u!1001 &854060322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11769,7 +11783,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 7e1452386436d15489b415fa7634db9e, type: 2}
   m_audioClip: {fileID: 8300000, guid: ed01299bfd268d645b6b66f07e1ae9a4, type: 3}
   m_Resource: {fileID: 8300000, guid: ed01299bfd268d645b6b66f07e1ae9a4, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
