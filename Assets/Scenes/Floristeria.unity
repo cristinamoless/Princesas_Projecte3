@@ -21720,7 +21720,7 @@ MonoBehaviour:
   morningRotation: {x: 25, y: 30, z: 0}
   afternoonRotation: {x: 60, y: 30, z: 0}
   eveningRotation: {x: 10, y: 30, z: 0}
-  transitionSpeed: 0.05
+  transitionSpeed: 0.5
 --- !u!4 &2142189409
 Transform:
   m_ObjectHideFlags: 0
