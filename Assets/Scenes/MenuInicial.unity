@@ -1131,8 +1131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6631ffad1cdd8754784d89a9f668694e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musica: {fileID: 1454342741}
-  sliderMusica: {fileID: 1327616819}
 --- !u!4 &1280799315
 Transform:
   m_ObjectHideFlags: 0
