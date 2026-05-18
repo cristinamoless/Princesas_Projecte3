@@ -4,7 +4,9 @@ public class NPCManager : MonoBehaviour
 {
     public GameObject[] clients;   // Rock, Gemma, Marc, Maria...
     public Transform spawnPoint;
-
+    public TimeManager timeManager;
+    public int[] clientHours = { 10, 14, 17 };
+    
     private int currentClientIndex = 0;
     private GameObject currentClient;
 
@@ -20,6 +22,8 @@ public class NPCManager : MonoBehaviour
 
         if (currentClientIndex >= clients.Length)
             return;
+
+        timeManager.SetTime(clientHours[currentClientIndex]);
 
         currentClient = Instantiate(clients[currentClientIndex], spawnPoint.position, Quaternion.identity);
         currentClient.transform.rotation = Quaternion.Euler(0, 180, 0);
