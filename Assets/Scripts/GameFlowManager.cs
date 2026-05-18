@@ -117,10 +117,12 @@ public class GameFlowManager : MonoBehaviour
         dialeg.SetActive(true);
         dialogueManager.StartDialogue(result);
 
-        if (currentDay == 1 && comandaIndex >= database.day1Orders.Count)
+
+        if (comandaIndex >= list.Count)
         {
             waitingForFinalDialogue = true;
         }
+
 
         comandaArea.hasTalked = false;
         cc.SetCursor();
@@ -134,14 +136,21 @@ public class GameFlowManager : MonoBehaviour
             if (npcManager != null)
                 npcManager.MakeCurrentClientLeave();
         }
+
         if (waitingForFinalDialogue)
         {
             fiDia.SetActive(true);
             date.SetActive(false);
             uiOrder.ShowEndOfDay(completedOrders);
             waitingForFinalDialogue = false;
+
+            var timeManager = FindObjectOfType<TimeManager>();
+            timeManager.currentDayIndex++;
+            timeManager.SetDay(timeManager.currentDayIndex);
+            timeManager.ResetDay();
         }
     }
+
 
     public Dialogue GetDialogue(int day, int index, DialogueType type)
     {
