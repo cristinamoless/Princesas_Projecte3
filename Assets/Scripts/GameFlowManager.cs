@@ -97,6 +97,8 @@ public class GameFlowManager : MonoBehaviour
         currentComanda = null;
         uiOrder.ClearUI();
 
+
+
         Dialogue result = null;
 
         if (correct)
@@ -126,6 +128,12 @@ public class GameFlowManager : MonoBehaviour
 
     public void OnDialogueEnded()
     {
+        if (!dialogueManager.isDialogueInici && !waitingForFinalDialogue)
+        {
+            var npcManager = FindObjectOfType<NPCManager>();
+            if (npcManager != null)
+                npcManager.MakeCurrentClientLeave();
+        }
         if (waitingForFinalDialogue)
         {
             fiDia.SetActive(true);
