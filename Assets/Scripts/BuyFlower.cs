@@ -16,13 +16,16 @@ public class BuyFlower : MonoBehaviour
 
     public List<FlowerButton> flowerButtons;
 
-    public GameObject marcComprar;      
-    public GameObject perComprar;      
-    public GameObject comprat;         
-    public TMP_Text confirmText;        
-    public TMP_Text resultText;         
+    public GameObject marcComprar;
+    public GameObject perComprar;
+    public GameObject comprat;
+    public TMP_Text confirmText;
+    public TMP_Text resultText;
+
+    public GameObject continueButton;
 
     private FlowerType selectedFlower;
+
 
     public void showFlowers()
     {
@@ -38,6 +41,8 @@ public class BuyFlower : MonoBehaviour
         {
             fb.button.SetActive(available.Contains(fb.flower));
         }
+
+        UpdateContinueButton(); 
     }
 
     public void AskToBuy(FlowerType flower)
@@ -70,13 +75,35 @@ public class BuyFlower : MonoBehaviour
             selectedFlower.unlocked = true;
 
             resultText.text = "COMPRAT!";
-            showFlowers(); 
+            showFlowers();
+            UpdateContinueButton(); 
         }
         else
         {
             resultText.text = "No tens prou estrelles!";
         }
     }
+
+    public bool HasBoughtFlowersForDay(int day)
+    {
+        foreach (var flower in allFlowers)
+        {
+            if (flower.availableDay == day)
+            {
+                if (!flower.unlocked)
+                    return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void UpdateContinueButton()
+    {
+        bool allBought = HasBoughtFlowersForDay(gfm.currentDay);
+        continueButton.SetActive(allBought);
+    }
+
     void Update()
     {
         if (comprat.activeSelf)
@@ -88,5 +115,4 @@ public class BuyFlower : MonoBehaviour
             }
         }
     }
-
 }

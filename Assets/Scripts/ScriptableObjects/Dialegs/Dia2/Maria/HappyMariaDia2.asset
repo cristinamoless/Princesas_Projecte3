@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec23eb2d740e224aa77d0071ea82c3b, type: 3}
+  m_Name: HappyMariaDia2
+  m_EditorClassIdentifier: 
+  characterName: Maria
+  characterPixel: {fileID: 21300000, guid: c0bca766a1327d94aa66523655cc0797, type: 3}
+  sentences:
+  - "{PlayerName}! \xC9s preci\xF3s, quasi tant com tu\u2026 jeje."
+  - "Escolta, no tinc res a fer la resta de la tarda, si vols t\u2019ajudo a recollir"
+  - "i sopem juntes al restaurant del poble, jo et convido, \xE9s clar.\r"
+  day: 2
+  orderIndex: 3
+  type: 4
+  choices:
+  - choiceText: " De veritat?! M\u2019encantaria, dona\u2019m un moment, tanco la
+      botiga i pujo a canviar-me!"
+    nextDialogue: {fileID: 11400000, guid: f35cf28c567fd6e469d2814c58aeb221, type: 2}
+  - choiceText: "M'\xE9s impossible avui preciosa! Tinc un munt de paperassa a fer."
+    nextDialogue: {fileID: 11400000, guid: 2eb5aaa69b3392b4dbab085a242b8c91, type: 2}

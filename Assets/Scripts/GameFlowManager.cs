@@ -13,6 +13,7 @@ public class GameFlowManager : MonoBehaviour
     public GameObject dialeg;
     public GameObject fiDia;
     public GameObject date;
+    public GameObject toDo;
 
     public Comanda currentComanda;
     public int currentDay = 1;
@@ -48,6 +49,7 @@ public class GameFlowManager : MonoBehaviour
 
         date.SetActive(true);
         fiDia.SetActive(false);
+        toDo.SetActive(false);
         buyFlower.showFlowers();
         repartidor.SetActive(true);
         currentDialogue = GetDialogue(currentDay, 0, DialogueType.Repartidor);
@@ -78,6 +80,7 @@ public class GameFlowManager : MonoBehaviour
                 currentComanda = database.day2Orders[comandaIndex];
 
             uiOrder.ShowOrder(currentComanda);
+            toDo.SetActive(true);
         }
     }
 
@@ -96,6 +99,7 @@ public class GameFlowManager : MonoBehaviour
         comandaIndex++;
         currentComanda = null;
         uiOrder.ClearUI();
+        toDo.SetActive(false);
 
 
 

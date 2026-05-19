@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec23eb2d740e224aa77d0071ea82c3b, type: 3}
+  m_Name: IniciMarcDia2
+  m_EditorClassIdentifier: 
+  characterName: Marc
+  characterPixel: {fileID: 21300000, guid: 7ff91e30f029ab64d87955595742864a, type: 3}
+  sentences:
+  - Hola, {PlayerName}, veritat? Soc en Marc!
+  - "M\u2019han parlat molt b\xE9 de tu. Vinc a comprar un ram per casa."
+  - "Soc artista i necessito decoraci\xF3 pel meu estudi, "
+  - "les meves flors preferides s\xF3n les roses, aix\xED que vull un ram ben maco,"
+  - "si tens flors de muguet, tamb\xE9 m\u2019agradaria que posessin alguna\u2026"
+  day: 2
+  orderIndex: 2
+  type: 0
+  choices: []

@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bec23eb2d740e224aa77d0071ea82c3b, type: 3}
-  m_Name: IniciGemmaDia2
+  m_Name: HappyGemmaDia2
   m_EditorClassIdentifier: 
   characterName: Gemma
-  characterPixel: {fileID: 21300000, guid: c4ade6485c27a5a42b7832152174733c, type: 3}
+  characterPixel: {fileID: 21300000, guid: e87ce845947bef64a900227ee7d1205d, type: 3}
   sentences:
-  - "Hola bonica, s\xF3c la gemma! \r\n"
-  - Et vinc a demanar un ram de flors de muguet, que en tens?
-  - "SI?! Quina il\xB7lusi\xF3, son les preferides de la meva \xE0via."
+  - "\xC9s perfecte, m\u2019encanta! Aqu\xED tens bonica."
+  - "Espero veure\u2019t pel poble!"
   day: 2
   orderIndex: 1
-  type: 0
+  type: 1
   choices: []

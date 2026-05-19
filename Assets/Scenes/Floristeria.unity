@@ -8175,6 +8175,7 @@ MonoBehaviour:
   dialeg: {fileID: 1658427508}
   fiDia: {fileID: 1874505364}
   date: {fileID: 1593887659}
+  toDo: {fileID: 0}
   currentComanda:
     nomComanda: 
     clientName: 
@@ -8196,7 +8197,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b861e4f80da0e0e4d8fa95ff6980534e, type: 2}
   - {fileID: 11400000, guid: 2eb5aaa69b3392b4dbab085a242b8c91, type: 2}
   - {fileID: 11400000, guid: 13aea2fd0a282f44ba5b94dd001f132a, type: 2}
-  cc: {fileID: 2142881588}
+  - {fileID: 11400000, guid: f35cf28c567fd6e469d2814c58aeb221, type: 2}
+  - {fileID: 11400000, guid: 85accc76b52f56744bd85c3b85a65715, type: 2}
+  - {fileID: 11400000, guid: 69f7dee40e1584a4fb63be38820aaece, type: 2}
+  - {fileID: 11400000, guid: 4f3f222c3f37ef943a47150d4fe7e4c9, type: 2}
+  - {fileID: 11400000, guid: e5686c0e205f51d45a211ee7106520b4, type: 2}
+  - {fileID: 11400000, guid: 1660c2d86d877b246859cc6fcee3233a, type: 2}
+  - {fileID: 11400000, guid: 5c3e62cc8fcf7dc4782b4da9e8763fa9, type: 2}
+  - {fileID: 11400000, guid: 86b0178df947d0d468399e97282165ed, type: 2}
+  - {fileID: 11400000, guid: 74deb00e8d56119489384aa59f4f34ef, type: 2}
+  - {fileID: 11400000, guid: 3514b3c78163ff94d830cbeb8a51f2e0, type: 2}
+  - {fileID: 11400000, guid: 3ae22a3be21435341b0edb4b7ba6db54, type: 2}
+  - {fileID: 11400000, guid: 2f2da78db3c237846802e4f66f54252c, type: 2}
+  cc: {fileID: 0}
   lastOrderWasCorrect: 0
   completedOrders: []
 --- !u!4 &790506082
