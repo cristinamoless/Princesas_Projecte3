@@ -8175,7 +8175,7 @@ MonoBehaviour:
   dialeg: {fileID: 1658427508}
   fiDia: {fileID: 1874505364}
   date: {fileID: 1593887659}
-  toDo: {fileID: 0}
+  toDo: {fileID: 492036514}
   currentComanda:
     nomComanda: 
     clientName: 
@@ -17710,6 +17710,7 @@ MonoBehaviour:
   comprat: {fileID: 1464834083}
   confirmText: {fileID: 842086685}
   resultText: {fileID: 1464834085}
+  continueButton: {fileID: 849409527}
 --- !u!1001 &1755148105
 PrefabInstance:
   m_ObjectHideFlags: 0
