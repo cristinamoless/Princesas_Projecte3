@@ -41,8 +41,6 @@ public class BuyFlower : MonoBehaviour
         {
             fb.button.SetActive(available.Contains(fb.flower));
         }
-
-        UpdateContinueButton(); 
     }
 
     public void AskToBuy(FlowerType flower)
@@ -76,7 +74,6 @@ public class BuyFlower : MonoBehaviour
 
             resultText.text = "COMPRAT!";
             showFlowers();
-            UpdateContinueButton(); 
         }
         else
         {
@@ -98,12 +95,6 @@ public class BuyFlower : MonoBehaviour
         return true;
     }
 
-    public void UpdateContinueButton()
-    {
-        bool allBought = HasBoughtFlowersForDay(gfm.currentDay);
-        continueButton.SetActive(allBought);
-    }
-
     void Update()
     {
         if (comprat.activeSelf)
@@ -114,5 +105,8 @@ public class BuyFlower : MonoBehaviour
                 marcComprar.SetActive(false);
             }
         }
+
+        bool allBought = HasBoughtFlowersForDay(gfm.currentDay);
+        continueButton.SetActive(allBought);
     }
 }

@@ -143,16 +143,21 @@ public class GameFlowManager : MonoBehaviour
 
         if (waitingForFinalDialogue)
         {
-            fiDia.SetActive(true);
-            date.SetActive(false);
-            uiOrder.ShowEndOfDay(completedOrders);
-            waitingForFinalDialogue = false;
-
-            var timeManager = FindObjectOfType<TimeManager>();
-            timeManager.currentDayIndex++;
-            timeManager.SetDay(timeManager.currentDayIndex);
-            timeManager.ResetDay();
+            EndDay();
         }
+    }
+
+    public void EndDay()
+    {
+        fiDia.SetActive(true);
+        date.SetActive(false);
+        uiOrder.ShowEndOfDay(completedOrders);
+        waitingForFinalDialogue = false;
+
+        var timeManager = FindObjectOfType<TimeManager>();
+        timeManager.currentDayIndex++;
+        timeManager.SetDay(timeManager.currentDayIndex);
+        timeManager.ResetDay();
     }
 
 
