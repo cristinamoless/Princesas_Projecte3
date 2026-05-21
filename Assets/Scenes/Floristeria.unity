@@ -16213,13 +16213,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593887659}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6895325d5af9ec243a2d488a0c6fbd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dayText: {fileID: 1910265237}
   starsText: {fileID: 778297882}
+  gfm: {fileID: 790506081}
 --- !u!1001 &1597826456
 PrefabInstance:
   m_ObjectHideFlags: 0
