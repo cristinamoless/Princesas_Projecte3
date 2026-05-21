@@ -6,10 +6,10 @@ public class DateManager : MonoBehaviour
     public TMP_Text dayText;
     public TMP_Text starsText;
 
+    public GameFlowManager gfm;
     void Update()
     {
-        int day = FindFirstObjectByType<GameFlowManager>().currentDay;
-        dayText.text = GetDayName(day);
+        dayText.text = GetDayName(gfm.currentDay);
         starsText.text = PlayerStars.Instance.totalStars.ToString();
     }
 

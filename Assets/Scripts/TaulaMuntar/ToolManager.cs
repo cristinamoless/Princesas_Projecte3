@@ -12,70 +12,69 @@ public class ToolManager : MonoBehaviour
 
     public static ToolType activeTool = ToolType.Hand;
 
-    public GameObject handCursor;
-    public GameObject handClosedCursor;
-    public GameObject scissorsCursor;
-    public GameObject scissorsClosedCursor;
-    public GameObject rotateCursor;
-    public GameObject deleteCursor;
+    public Texture2D handCursor;
+    public Texture2D handClosedCursor;
+    public Texture2D scissorsCursor;
+    public Texture2D scissorsClosedCursor;
+    public Texture2D rotateCursor;
+    public Texture2D deleteCursor;
+
+    public Vector2 hotspot = Vector2.zero;
 
     void Start()
     {
-        Cursor.visible = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SetCursor(ToolType.Hand);
     }
 
     void Update()
     {
-        Vector3 mousePos = Input.mousePosition;
-        UpdateCursorPosition(mousePos);
+        bool clicking = Input.GetMouseButton(0);
+
+        switch (activeTool)
+        {
+            case ToolType.Hand:
+                Cursor.SetCursor(clicking ? handClosedCursor : handCursor, hotspot, CursorMode.Auto);
+                break;
+
+            case ToolType.Scissors:
+                Cursor.SetCursor(clicking ? scissorsClosedCursor : scissorsCursor, hotspot, CursorMode.Auto);
+                break;
+
+            case ToolType.Rotate:
+                Cursor.SetCursor(rotateCursor, hotspot, CursorMode.Auto);
+                break;
+
+            case ToolType.Delete:
+                Cursor.SetCursor(deleteCursor, hotspot, CursorMode.Auto);
+                break;
+        }
     }
     public void SetCursor(ToolType tool)
     {
         activeTool = tool;
 
-        handCursor.SetActive(tool == ToolType.Hand);
-        handClosedCursor.SetActive(false);
-        scissorsCursor.SetActive(tool == ToolType.Scissors);
-        scissorsClosedCursor.SetActive(false);
-        rotateCursor.SetActive(tool == ToolType.Rotate);
-        deleteCursor.SetActive(tool == ToolType.Delete);
-    }
-
-    void UpdateCursorPosition(Vector3 mousePos)
-    {
-        bool clicking = Input.GetMouseButton(0);
-        switch (activeTool)
+        switch (tool)
         {
             case ToolType.Hand:
-                handCursor.SetActive(!clicking);
-                handClosedCursor.SetActive(clicking);
-
-                if (clicking)
-                    handClosedCursor.transform.position = mousePos;
-                else
-                    handCursor.transform.position = mousePos;
+                Cursor.SetCursor(handCursor, hotspot, CursorMode.Auto);
                 break;
 
             case ToolType.Scissors:
-                scissorsCursor.SetActive(!clicking);
-                scissorsClosedCursor.SetActive(clicking);
-
-                if (clicking)
-                    scissorsClosedCursor.transform.position = mousePos;
-                else
-                    scissorsCursor.transform.position = mousePos;
+                Cursor.SetCursor(scissorsCursor, hotspot, CursorMode.Auto);
                 break;
 
             case ToolType.Rotate:
-                rotateCursor.transform.position = mousePos;
+                Cursor.SetCursor(rotateCursor, hotspot, CursorMode.Auto);
                 break;
 
             case ToolType.Delete:
-                deleteCursor.transform.position = mousePos;
+                Cursor.SetCursor(deleteCursor, hotspot, CursorMode.Auto);
                 break;
         }
     }
+
     public void ActivateHand() {
         SetCursor(ToolType.Hand);
     }

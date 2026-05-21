@@ -136,7 +136,7 @@ public class GameFlowManager : MonoBehaviour
     {
         if (!dialogueManager.isDialogueInici && !waitingForFinalDialogue)
         {
-            var npcManager = FindObjectOfType<NPCManager>();
+            var npcManager = FindFirstObjectByType<NPCManager>();
             if (npcManager != null)
                 npcManager.MakeCurrentClientLeave();
         }
@@ -154,12 +154,31 @@ public class GameFlowManager : MonoBehaviour
         uiOrder.ShowEndOfDay(completedOrders);
         waitingForFinalDialogue = false;
 
-        var timeManager = FindObjectOfType<TimeManager>();
-        timeManager.currentDayIndex++;
-        timeManager.SetDay(timeManager.currentDayIndex);
+        bool hasEnoughStars = PlayerStars.Instance.totalStars >= GetMinimumStarsForNextDay();
+
+        if (!hasEnoughStars)
+        {
+            Debug.Log("No tens prou estrelles o flors. Repetim el dia.");
+            comandaIndex--;
+            return;
+        }
+
+        var timeManager = FindFirstObjectByType<TimeManager>();
         timeManager.ResetDay();
     }
 
+    private int GetMinimumStarsForNextDay()
+    {
+        int total = 0;
+
+        foreach (var flower in buyFlower.allFlowers)
+        {
+            if (flower.availableDay == currentDay + 1 && !flower.unlocked)
+                total += flower.seedPrice;
+        }
+
+        return total;
+    }
 
     public Dialogue GetDialogue(int day, int index, DialogueType type)
     {
