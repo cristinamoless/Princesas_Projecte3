@@ -837,8 +837,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "CONFIGURACI\xD3"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1100,6 +1100,7 @@ MonoBehaviour:
   shop: Floristeria
   start: MenuInicial
   text: {fileID: 0}
+  isLoading: 0
 --- !u!1 &1280799313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,8 +2020,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Volum So
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2230,8 +2231,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Volum M\xFAsica"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2531,6 +2532,7 @@ MonoBehaviour:
   shop: Floristeria
   start: MenuInicial
   text: {fileID: 0}
+  isLoading: 0
 --- !u!114 &2059238338
 MonoBehaviour:
   m_ObjectHideFlags: 0

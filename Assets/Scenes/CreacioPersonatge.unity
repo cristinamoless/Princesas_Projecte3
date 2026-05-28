@@ -556,8 +556,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LA TEVA FLOR PREFERIDA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -834,8 +834,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1091,8 +1091,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1442,8 +1442,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: EL TEU NOM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2186,8 +2186,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: TRIA LA TEVA SAMARRETA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2902,8 +2902,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3059,8 +3059,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3274,8 +3274,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: BENVINGUDA, SIUSPLAU EMPLENA ELS SEGUENTS CAMPS!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
