@@ -49,6 +49,7 @@ public class ComandaManager : MonoBehaviour
 
     public void ConfirmOrder()
     {
+       AudioManager.Instance.Play("Clic");
        bool correct = CheckOrder();
         flow.lastOrderWasCorrect = correct;
 

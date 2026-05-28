@@ -50,17 +50,20 @@ public class EditFlower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     }
 
 
-public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
         if (ToolManager.activeTool == ToolManager.ToolType.Scissors)
         {
             flower.RemoveLeaves();
+            AudioManager.Instance.Play("TallarFulles");
         }
         if (ToolManager.activeTool == ToolManager.ToolType.Delete)
         {
+            AudioManager.Instance.Play("EliminarFlor");
             Destroy(gameObject);
         }
     }
+
 }
 
 

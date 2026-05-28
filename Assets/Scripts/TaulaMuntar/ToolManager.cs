@@ -77,15 +77,19 @@ public class ToolManager : MonoBehaviour
 
     public void ActivateHand() {
         SetCursor(ToolType.Hand);
+        AudioManager.Instance.Play("Clic");
     }
     public void ActivateScissors() {
         SetCursor(ToolType.Scissors);
+        AudioManager.Instance.Play("Clic");
     }
     public void ActivateRotate() {
         SetCursor(ToolType.Rotate);
+        AudioManager.Instance.Play("Clic");
     }
     public void ActivateDelete() {
         SetCursor(ToolType.Delete);
+        AudioManager.Instance.Play("Clic");
     }
 
 }

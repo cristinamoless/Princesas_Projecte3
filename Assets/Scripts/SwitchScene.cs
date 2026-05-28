@@ -38,6 +38,7 @@ public class SwitchScene : MonoBehaviour
 
     public void shopScene()
     {
+        AudioManager.Instance.Play("Clic");
         SceneManager.LoadScene(shop);
     }
     public void closeBuild()
