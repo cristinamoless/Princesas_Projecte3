@@ -9,20 +9,28 @@ public class SwitchScene : MonoBehaviour
     public string shop = "Floristeria";
     public string start = "MenuInicial";
     public TMP_Text text;
+    public bool isLoading = false;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     private void Start()
     {
         text.text = " ";
     }
+
     private void OnTriggerStay(Collider other)
     {
         text.text = "Donali a la F si vols muntar flors";
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            SceneManager.LoadScene(build, LoadSceneMode.Additive);
 
+        if (Input.GetKeyDown(KeyCode.F) && !isLoading)
+        {
+            isLoading = true;
+            SceneManager.LoadScene(build, LoadSceneMode.Additive);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         text.text = " ";
@@ -35,6 +43,7 @@ public class SwitchScene : MonoBehaviour
     public void closeBuild()
     {
         SceneManager.UnloadSceneAsync(build);
+        isLoading = false;
     }
     public void creacioScene()
     {

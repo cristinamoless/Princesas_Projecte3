@@ -4716,6 +4716,7 @@ MonoBehaviour:
   shop: Floristeria
   start: MenuInicial
   text: {fileID: 1870077862}
+  isLoading: 0
 --- !u!65 &474633872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22252,6 +22253,10 @@ PrefabInstance:
     - target: {fileID: 6235807834155480331, guid: 2dae7d285f25ff248a800deb5b9acc24, type: 3}
       propertyPath: m_Name
       value: Prota
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360266206816289016, guid: 2dae7d285f25ff248a800deb5b9acc24, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6755921172759523249, guid: 2dae7d285f25ff248a800deb5b9acc24, type: 3}
       propertyPath: m_LocalPosition.x

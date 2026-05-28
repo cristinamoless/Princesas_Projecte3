@@ -8,11 +8,13 @@ public class ComandaManager : MonoBehaviour
 
     private GameFlowManager flow;
     public Comanda currentComanda;
+    public SwitchScene switchScene;
 
     void Start()
     {
         flow = FindFirstObjectByType<GameFlowManager>();
         currentComanda = flow.currentComanda;
+        switchScene = FindFirstObjectByType<SwitchScene>();
     }
 
     public bool CheckOrder()
@@ -55,7 +57,7 @@ public class ComandaManager : MonoBehaviour
             int reward = currentComanda.reward;
             PlayerStars.Instance.addStars(reward);
         }
-        SceneManager.UnloadSceneAsync("BuildFlower");
+        switchScene.closeBuild();
         table.ClearTable();
         flow.OnOrderConfirmed();
     
