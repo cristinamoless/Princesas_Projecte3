@@ -1988,6 +1988,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 627436200}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Comprar
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &172087392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3836,6 +3848,18 @@ MonoBehaviour:
           m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 627436200}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Clic
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &370263236
@@ -5864,6 +5888,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 627436200}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ArrosegarFlor
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &603655657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6390,6 +6426,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98b96c18ed829474fa457ac4e43676fb, type: 3}
   m_PrefabInstance: {fileID: 623533820}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &627436199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627436201}
+  - component: {fileID: 627436200}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &627436200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627436199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cee194e26eb4d4e8fb2b92f362512d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Clic
+    clip: {fileID: 8300000, guid: 2a26a76a812cbe440b7a43e0ac3a67d4, type: 3}
+    volume: 1
+    pitch: 1
+  - name: NouClient
+    clip: {fileID: 8300000, guid: 78c0f4fe4ce3a3a44873c10625a1fcb9, type: 3}
+    volume: 1
+    pitch: 1
+  - name: Comprar
+    clip: {fileID: 8300000, guid: 91456465d5008e5478c3c0374ca0ff72, type: 3}
+    volume: 1
+    pitch: 1
+  - name: FiDia
+    clip: {fileID: 8300000, guid: 479e2a6fe3d6b7d47911fd5c6e5d9e72, type: 3}
+    volume: 1
+    pitch: 1
+  - name: ArrosegarFlor
+    clip: {fileID: 8300000, guid: 5521eb47f9b82c44b9c71b116b24d2e9, type: 3}
+    volume: 1
+    pitch: 1
+  - name: EliminarFlor
+    clip: {fileID: 8300000, guid: c8add4a2f0bde8f40ae91a428b0f3445, type: 3}
+    volume: 1
+    pitch: 1
+  - name: EliminarFlor
+    clip: {fileID: 8300000, guid: c8add4a2f0bde8f40ae91a428b0f3445, type: 3}
+    volume: 1
+    pitch: 1
+  - name: TallarFulles
+    clip: {fileID: 8300000, guid: 01825fea7c00998428dad4619d329768, type: 3}
+    volume: 1
+    pitch: 1
+  - name: ObrirLlibreta
+    clip: {fileID: 8300000, guid: d997bd220a1118a44b5b333a4e7c6cb7, type: 3}
+    volume: 1
+    pitch: 1
+  - name: PassarPagina
+    clip: {fileID: 8300000, guid: ded7a28c201ed2149bae42e7de3e8869, type: 3}
+    volume: 1
+    pitch: 1
+--- !u!4 &627436201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627436199}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.23, y: 0.5, z: -2.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &633510245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7372,6 +7493,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 627436200}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Clic
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &743514586
@@ -8714,6 +8847,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 627436200}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Clic
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &849409531
@@ -10813,6 +10958,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 627436200}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Clic
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1033580214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11914,6 +12071,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 627436200}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ArrosegarFlor
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1093404741
@@ -14427,6 +14596,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 627436200}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ArrosegarFlor
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &1386823706
@@ -22471,4 +22652,5 @@ SceneRoots:
   - {fileID: 1700317832}
   - {fileID: 2067463455}
   - {fileID: 852332346}
+  - {fileID: 627436201}
   - {fileID: 1854938339}

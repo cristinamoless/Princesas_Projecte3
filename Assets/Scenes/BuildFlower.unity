@@ -1650,6 +1650,7 @@ MonoBehaviour:
     clientName: 
     requiredFlowers: []
     reward: 0
+  switchScene: {fileID: 0}
 --- !u!1 &1640208506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +1945,7 @@ MonoBehaviour:
   shop: Floristeria
   start: MenuInicial
   text: {fileID: 1442328207}
+  isLoading: 0
 --- !u!1 &2141706207
 GameObject:
   m_ObjectHideFlags: 0
