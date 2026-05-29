@@ -14,6 +14,7 @@ public class GameFlowManager : MonoBehaviour
     public GameObject fiDia;
     public GameObject date;
     public GameObject toDo;
+    public GameObject notEnough;
 
     public Comanda currentComanda;
     public int currentDay = 1;
@@ -151,6 +152,7 @@ public class GameFlowManager : MonoBehaviour
     {
         fiDia.SetActive(true);
         date.SetActive(false);
+        dialeg.SetActive(false);
         uiOrder.ShowEndOfDay(completedOrders);
         waitingForFinalDialogue = false;
 
@@ -158,8 +160,8 @@ public class GameFlowManager : MonoBehaviour
 
         if (!hasEnoughStars)
         {
-            Debug.Log("No tens prou estrelles o flors. Repetim el dia.");
-            comandaIndex--;
+            notEnough.SetActive(true);
+            currentDay--;
             return;
         }
 
@@ -189,5 +191,15 @@ public class GameFlowManager : MonoBehaviour
         }
 
         return null;
+    }
+    public void Update()
+    {
+        if (notEnough.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                notEnough.SetActive(false);
+            }
+        }
     }
 }

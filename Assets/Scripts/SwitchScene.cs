@@ -11,10 +11,16 @@ public class SwitchScene : MonoBehaviour
     public TMP_Text text;
     public bool isLoading = false;
 
-    void Awake()
+    private void OnEnable()
     {
-        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
+
     private void Start()
     {
         text.text = " ";
@@ -36,16 +42,28 @@ public class SwitchScene : MonoBehaviour
         text.text = " ";
     }
 
+    public void closeBuild()
+    {
+        AudioManager.Instance.Play("Clic");
+        SceneManager.UnloadSceneAsync(build);
+    }
+
+    private void OnSceneUnloaded(Scene scene)
+    {
+        if (scene.name == build)
+        {
+            isLoading = false;
+            text.text = " ";
+        }
+    }
+
     public void shopScene()
     {
         AudioManager.Instance.Play("Clic");
         SceneManager.LoadScene(shop);
-    }
-    public void closeBuild()
-    {
-        SceneManager.UnloadSceneAsync(build);
         isLoading = false;
     }
+
     public void creacioScene()
     {
         SceneManager.LoadScene(custom);
