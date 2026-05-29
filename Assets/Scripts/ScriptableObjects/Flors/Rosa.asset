@@ -15,7 +15,7 @@ MonoBehaviour:
   flowerName: Rosa
   stars: 200
   seedPrice: 0
-  unlocked: 0
+  unlocked: 1
   availableDay: 1
   withLeaves: {fileID: 21300000, guid: 703090430e64eba469d534fd6a4541fc, type: 3}
   withoutLeaves: {fileID: 21300000, guid: feae6dc72de61ca48a2bf23c8e3ec813, type: 3}
