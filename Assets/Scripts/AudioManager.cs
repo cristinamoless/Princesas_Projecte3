@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public Sound[] sounds;
-    private AudioSource source;
+    public AudioSource source;
 
     void Awake()
     {
@@ -27,18 +27,11 @@ public class AudioManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        source = gameObject.AddComponent<AudioSource>();
     }
 
     public void Play(string soundName)
     {
         Sound s = Array.Find(sounds, x => x.name == soundName);
-        if (s == null)
-        {
-            Debug.LogWarning("Sound not found: " + soundName);
-            return;
-        }
 
         source.volume = s.volume;
         source.pitch = s.pitch;

@@ -307,7 +307,6 @@ MonoBehaviour:
   panelConfiguracio: {fileID: 218093193}
   Titol: {fileID: 1370292780}
   Button: {fileID: 2068876746}
-  ToDo: {fileID: 0}
 --- !u!4 &239770763
 Transform:
   m_ObjectHideFlags: 0
@@ -656,6 +655,190 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540313258}
   m_CullTransparentMesh: 1
+--- !u!1 &750534605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 750534607}
+  - component: {fileID: 750534606}
+  - component: {fileID: 750534608}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &750534606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750534605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cee194e26eb4d4e8fb2b92f362512d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Clic
+    clip: {fileID: 8300000, guid: 2a26a76a812cbe440b7a43e0ac3a67d4, type: 3}
+    volume: 1
+    pitch: 1
+  - name: NouClient
+    clip: {fileID: 8300000, guid: 78c0f4fe4ce3a3a44873c10625a1fcb9, type: 3}
+    volume: 1
+    pitch: 1
+  - name: Comprar
+    clip: {fileID: 8300000, guid: 91456465d5008e5478c3c0374ca0ff72, type: 3}
+    volume: 1
+    pitch: 1
+  - name: FiDia
+    clip: {fileID: 8300000, guid: 479e2a6fe3d6b7d47911fd5c6e5d9e72, type: 3}
+    volume: 1
+    pitch: 1
+  - name: ArrosegarFlor
+    clip: {fileID: 8300000, guid: 5521eb47f9b82c44b9c71b116b24d2e9, type: 3}
+    volume: 1
+    pitch: 1
+  - name: EliminarFlor
+    clip: {fileID: 8300000, guid: c8add4a2f0bde8f40ae91a428b0f3445, type: 3}
+    volume: 1
+    pitch: 1
+  - name: EliminarFlor
+    clip: {fileID: 8300000, guid: c8add4a2f0bde8f40ae91a428b0f3445, type: 3}
+    volume: 1
+    pitch: 1
+  - name: TallarFulles
+    clip: {fileID: 8300000, guid: 01825fea7c00998428dad4619d329768, type: 3}
+    volume: 1
+    pitch: 1
+  - name: ObrirLlibreta
+    clip: {fileID: 8300000, guid: d997bd220a1118a44b5b333a4e7c6cb7, type: 3}
+    volume: 1
+    pitch: 1
+  - name: PassarPagina
+    clip: {fileID: 8300000, guid: ded7a28c201ed2149bae42e7de3e8869, type: 3}
+    volume: 1
+    pitch: 1
+  source: {fileID: 750534608}
+--- !u!4 &750534607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750534605}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.23, y: 0.5, z: -2.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &750534608
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750534605}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -3829540755667846695, guid: 7e1452386436d15489b415fa7634db9e, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &760264671
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,8 +943,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693eeba495f9dc44fa7e27fc7231eef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalCursor: {fileID: 2800000, guid: 3d0cbaf616d786e40a35600d433dedff, type: 3}
-  clickCursor: {fileID: 2800000, guid: e6da51db05de5144497ce41fc2e71f03, type: 3}
+  normalCursor: {fileID: 2800000, guid: 9f71e12e12943e346b387e572b854cea, type: 3}
+  clickCursor: {fileID: 2800000, guid: 68da8df74d592c247a54c649233c111b, type: 3}
   hotspot: {x: 20, y: 20}
 --- !u!4 &806896318
 Transform:
@@ -1045,6 +1228,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 750534606}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Clic
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1249281808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,7 +1356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 7e1452386436d15489b415fa7634db9e, type: 2}
-  volumeSlider: {fileID: 1327616819}
+  musicSlider: {fileID: 1327616819}
+  audioSlider: {fileID: 1541432832}
 --- !u!114 &1280799317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,7 +1381,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1327616818}
   - component: {fileID: 1327616819}
-  - component: {fileID: 1327616820}
   m_Layer: 5
   m_Name: SliderMusica
   m_TagString: Untagged
@@ -1266,10 +1461,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1327616820}
+      - m_Target: {fileID: 1280799316}
         m_TargetAssemblyTypeName: AudioSettings, Assembly-CSharp
-        m_MethodName: SetVolume
-        m_Mode: 4
+        m_MethodName: SetMusicVolume
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1278,20 +1473,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1327616820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327616817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c2ee92c65acb584f8dc487f43905bf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 7e1452386436d15489b415fa7634db9e, type: 2}
-  volumeSlider: {fileID: 1327616819}
 --- !u!1 &1342250746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,7 +1697,7 @@ AudioSource:
   m_GameObject: {fileID: 1454342740}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 7e1452386436d15489b415fa7634db9e, type: 2}
+  OutputAudioMixerGroup: {fileID: -1112321388340073038, guid: 7e1452386436d15489b415fa7634db9e, type: 2}
   m_audioClip: {fileID: 8300000, guid: ed01299bfd268d645b6b66f07e1ae9a4, type: 3}
   m_Resource: {fileID: 8300000, guid: ed01299bfd268d645b6b66f07e1ae9a4, type: 3}
   m_PlayOnAwake: 0
@@ -1708,7 +1889,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1280799316}
+        m_TargetAssemblyTypeName: AudioSettings, Assembly-CSharp
+        m_MethodName: SetAudioVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1541540885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,6 +2595,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 750534606}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Clic
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1890073833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2589,6 +2794,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 750534606}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Clic
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2059238339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2719,6 +2936,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 750534606}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Clic
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2068876749
@@ -2890,3 +3119,4 @@ SceneRoots:
   - {fileID: 1541540888}
   - {fileID: 806896318}
   - {fileID: 1280799315}
+  - {fileID: 750534607}
