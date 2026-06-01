@@ -1,16 +1,43 @@
 using UnityEngine;
+using System.Collections;
 
 public class NPCManager : MonoBehaviour
 {
-    public GameObject[] clients;   // Rock, Gemma, Marc, Maria...
+    public GameObject[] clients;
+    public GameObject[] day1Clients;
+    public GameObject[] day2Clients;
+
     public Transform spawnPoint;
     public TimeManager timeManager;
     public int[] clientHours = { 10, 14, 17 };
-    
+
     private int currentClientIndex = 0;
     private GameObject currentClient;
 
-    void Start()
+    private Coroutine leaveRoutine;
+
+    public void SetClients(GameObject[] newClients)
+    {
+        clients = newClients;
+    }
+
+    public void ResetToFirstClient()
+    {
+        currentClientIndex = 0;
+
+        if (leaveRoutine != null)
+            StopCoroutine(leaveRoutine);
+
+        if (currentClient != null)
+        {
+            Destroy(currentClient);
+            currentClient = null;
+        }
+
+        CancelInvoke();
+    }
+
+    public void StartFirstClient()
     {
         SpawnNextClient();
     }
@@ -25,7 +52,12 @@ public class NPCManager : MonoBehaviour
 
         timeManager.SetTime(clientHours[currentClientIndex]);
 
-        currentClient = Instantiate(clients[currentClientIndex], spawnPoint.position, Quaternion.identity);
+        currentClient = Instantiate(
+            clients[currentClientIndex],
+            spawnPoint.position,
+            Quaternion.identity
+        );
+
         currentClient.transform.rotation = Quaternion.Euler(0, 180, 0);
 
         currentClientIndex++;
@@ -33,16 +65,29 @@ public class NPCManager : MonoBehaviour
 
     public void MakeCurrentClientLeave()
     {
+        if (currentClient == null)
+        {
+            SpawnNextClient();
+            return;
+        }
+
         var rock = currentClient.GetComponent<RockNPC>();
+
         if (rock != null)
         {
             rock.LeaveShop();
-            Invoke(nameof(SpawnNextClient), 2f); // espera que surti
+            leaveRoutine = StartCoroutine(LeaveThenSpawn());
         }
         else
         {
             Destroy(currentClient);
             SpawnNextClient();
         }
+    }
+
+    private IEnumerator LeaveThenSpawn()
+    {
+        yield return new WaitForSeconds(2f);
+        SpawnNextClient();
     }
 }

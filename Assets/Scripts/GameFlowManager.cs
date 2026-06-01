@@ -48,11 +48,15 @@ public class GameFlowManager : MonoBehaviour
         currentDay++;
         comandaIndex = 0;
 
+        SetupDayNPCs();
+
         date.SetActive(true);
         fiDia.SetActive(false);
         toDo.SetActive(false);
+
         buyFlower.showFlowers();
         repartidor.SetActive(true);
+
         currentDialogue = GetDialogue(currentDay, 0, DialogueType.Repartidor);
         dialogueManagerRepartidor.StartDialogue(currentDialogue);
     }
@@ -161,7 +165,11 @@ public class GameFlowManager : MonoBehaviour
         if (!hasEnoughStars)
         {
             notEnough.SetActive(true);
+
             currentDay--;
+
+            SetupDayNPCs(); 
+
             return;
         }
 
@@ -169,6 +177,20 @@ public class GameFlowManager : MonoBehaviour
         timeManager.ResetDay();
     }
 
+    private void SetupDayNPCs()
+    {
+        var npcManager = FindFirstObjectByType<NPCManager>();
+
+        if (npcManager == null) return;
+
+        if (currentDay == 1)
+            npcManager.SetClients(npcManager.day1Clients);
+        else
+            npcManager.SetClients(npcManager.day2Clients);
+
+        npcManager.ResetToFirstClient();
+        npcManager.StartFirstClient();
+    }
     private int GetMinimumStarsForNextDay()
     {
         int total = 0;
