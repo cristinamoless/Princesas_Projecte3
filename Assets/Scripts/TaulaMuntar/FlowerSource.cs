@@ -7,7 +7,15 @@ public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public RectTransform tableArea;
     public bool lockedInitially = false;
     private RectTransform currentFlower;
+    public FlowerType flowerType;
 
+    public void Start()
+    {
+        if (!flowerType.unlocked)
+        {
+            gameObject.SetActive(false);
+        }
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (ToolManager.activeTool != ToolManager.ToolType.Hand) return;

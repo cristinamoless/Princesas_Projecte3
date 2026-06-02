@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Maria
   characterPixel: {fileID: 21300000, guid: c0bca766a1327d94aa66523655cc0797, type: 3}
   sentences:
-  - "{PlayerName}! \xC9s preci\xF3s, quasi tant com tu\u2026 jeje."
+  - "{playerName}! \xC9s preci\xF3s, quasi tant com tu\u2026 jeje."
   - "Escolta, no tinc res a fer la resta de la tarda, si vols t\u2019ajudo a recollir"
   - "i sopem juntes al restaurant del poble, jo et convido, \xE9s clar.\r"
   day: 2

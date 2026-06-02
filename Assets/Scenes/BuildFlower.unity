@@ -620,6 +620,7 @@ MonoBehaviour:
   flowerPrefab: {fileID: 708951373}
   tableArea: {fileID: 1636672686}
   lockedInitially: 1
+  flowerType: {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
 --- !u!114 &708951376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   flowerPrefab: {fileID: 959806618}
   tableArea: {fileID: 1636672686}
   lockedInitially: 0
+  flowerType: {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
 --- !u!1 &999208148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &999208149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1161,6 +1163,7 @@ MonoBehaviour:
   flowerPrefab: {fileID: 999208148}
   tableArea: {fileID: 1636672686}
   lockedInitially: 0
+  flowerType: {fileID: 11400000, guid: bf07348c295a546499f41c2c42f562da, type: 2}
 --- !u!114 &999208153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,7 +1176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31723bf2044d7674da7e09679c00b701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowerType: {fileID: 0}
+  flowerType: {fileID: 11400000, guid: bf07348c295a546499f41c2c42f562da, type: 2}
 --- !u!1 &1396773986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,6 +1657,7 @@ MonoBehaviour:
     requiredFlowers: []
     reward: 0
   switchScene: {fileID: 0}
+  confirmButton: {fileID: 1640208506}
 --- !u!1 &1640208506
 GameObject:
   m_ObjectHideFlags: 0

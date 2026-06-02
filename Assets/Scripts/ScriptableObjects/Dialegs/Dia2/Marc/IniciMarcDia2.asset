@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Marc
   characterPixel: {fileID: 21300000, guid: 7ff91e30f029ab64d87955595742864a, type: 3}
   sentences:
-  - Hola, {PlayerName}, veritat? Soc en Marc!
+  - Hola, {playerName}, veritat? Soc en Marc!
   - "M\u2019han parlat molt b\xE9 de tu. Vinc a comprar un ram per casa."
   - "Soc artista i necessito decoraci\xF3 pel meu estudi, "
   - "les meves flors preferides s\xF3n les roses, aix\xED que vull un ram ben maco,"

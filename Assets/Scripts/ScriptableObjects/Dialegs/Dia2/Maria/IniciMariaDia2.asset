@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Maria
   characterPixel: {fileID: 21300000, guid: b2f1d48d0edf3d14388e2e88a407ee20, type: 3}
   sentences:
-  - "Hola, {PlayerName}, soc la Maria, germana d\u2019en Lloren\xE7. "
+  - "Hola, {playerName}, soc la Maria, germana d\u2019en Lloren\xE7. "
   - "M\u2019ha agradat el ram que li has fet aix\xED que vinc a demanar-te un.\r"
   - "M\u2019agraden les margarides i les flors de muguet, \r"
   - "aix\xED que ja saps, confio en la teva habilitat, preciosa.\r"

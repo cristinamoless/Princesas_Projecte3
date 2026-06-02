@@ -199,10 +199,7 @@ public class GameFlowManager : MonoBehaviour
         if (!hasEnoughStars)
         {
             notEnough.SetActive(true);
-
-            SetupDayNPCs();
-            RespawnPlayer();
-            return;
+            currentDay--;
         }
 
         comandaArea.hasTalked = false;
@@ -210,6 +207,7 @@ public class GameFlowManager : MonoBehaviour
         lastOrderWasCorrect = false;
         var timeManager = FindFirstObjectByType<TimeManager>();
         timeManager.ResetDay();
+        SetupDayNPCs();
         RespawnPlayer();
     }
 

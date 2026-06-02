@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Marc
   characterPixel: {fileID: 21300000, guid: 3f800978da40ce247b7192f811f882e7, type: 3}
   sentences:
-  - "Oh! \xC9s tot el que havia imaginat pel meu estudi, \xE9s perfecte, {PlayerName}!"
+  - "Oh! \xC9s tot el que havia imaginat pel meu estudi, \xE9s perfecte, {playerName}!"
   day: 2
   orderIndex: 1
   type: 1

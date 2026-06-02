@@ -9,6 +9,7 @@ public class ComandaManager : MonoBehaviour
     private GameFlowManager flow;
     public Comanda currentComanda;
     public SwitchScene switchScene;
+    public GameObject confirmButton;
 
     void Start()
     {
@@ -63,5 +64,26 @@ public class ComandaManager : MonoBehaviour
         flow.OnOrderConfirmed();
     
     }
+
+    public void Update()
+    {
+        UpdateConfirmButton();
+    }
+    public void UpdateConfirmButton()
+    {
+        GameFlowManager flow = FindFirstObjectByType<GameFlowManager>();
+
+        bool tutorial = (flow.currentDay == 1 && flow.comandaIndex == 0);
+
+        List<FlowerType> tableFlowers = table.GetFlowersOnTable();
+        if (tutorial && !CheckOrder()){
+            confirmButton.SetActive(false);
+        }
+        else
+        {
+            confirmButton.SetActive(true);
+        }
+    }
+
 
 }
