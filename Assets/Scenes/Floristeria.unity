@@ -7654,6 +7654,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1151892031}
     m_Modifications:
+    - target: {fileID: 4558129042925464013, guid: d4d7327faf1af5248899153cc6455dbb, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e81788777eda39543985da4fe92c9c5e, type: 2}
     - target: {fileID: 8462825951330171365, guid: d4d7327faf1af5248899153cc6455dbb, type: 3}
       propertyPath: m_Name
       value: Maria
@@ -8427,6 +8431,7 @@ MonoBehaviour:
     requiredFlowers: []
     reward: 0
   currentDay: 1
+  comandaIndex: 0
   dialogueManager: {fileID: 1658427510}
   dialogueManagerRepartidor: {fileID: 1755713201}
   currentDialogue: {fileID: 0}
@@ -22840,6 +22845,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7664418977733440660, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e81788777eda39543985da4fe92c9c5e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
