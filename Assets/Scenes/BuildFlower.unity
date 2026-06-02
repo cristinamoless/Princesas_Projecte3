@@ -619,6 +619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerPrefab: {fileID: 708951373}
   tableArea: {fileID: 1636672686}
+  lockedInitially: 1
 --- !u!114 &708951376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,6 +1068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerPrefab: {fileID: 959806618}
   tableArea: {fileID: 1636672686}
+  lockedInitially: 0
 --- !u!1 &999208148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerPrefab: {fileID: 999208148}
   tableArea: {fileID: 1636672686}
+  lockedInitially: 0
 --- !u!114 &999208153
 MonoBehaviour:
   m_ObjectHideFlags: 0

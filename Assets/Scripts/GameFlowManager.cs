@@ -31,7 +31,9 @@ public class GameFlowManager : MonoBehaviour
     private bool waitingForFinalDialogue = false;
 
     public List<CompletedOrderInfo> completedOrders = new List<CompletedOrderInfo>();
-
+    public bool firstOrderCompleted = false;
+    private bool deliverySeenThisRun = false;
+    private bool isDeliveryDialogue = false;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -47,6 +49,7 @@ public class GameFlowManager : MonoBehaviour
     {
         currentDay++;
         comandaIndex = 0;
+        deliverySeenThisRun = false;
 
         SetupDayNPCs();
 
@@ -55,15 +58,28 @@ public class GameFlowManager : MonoBehaviour
         toDo.SetActive(false);
 
         buyFlower.showFlowers();
-        repartidor.SetActive(true);
+        if (!deliverySeenThisRun)
+        {
+            deliverySeenThisRun = true;
 
-        currentDialogue = GetDialogue(currentDay, 0, DialogueType.Repartidor);
-        dialogueManagerRepartidor.StartDialogue(currentDialogue);
+            repartidor.SetActive(true);
+
+            currentDialogue = GetDialogue(currentDay, 0, DialogueType.Repartidor);
+
+            isDeliveryDialogue = true;
+            dialogueManagerRepartidor.StartDialogue(currentDialogue);
+        }
+        else
+        {
+            repartidor.SetActive(false);
+            
+        }
     }
 
     public void BeginClients()
     {
         repartidor.SetActive(false);
+       
     }
 
     public void TalkClients()
@@ -71,6 +87,8 @@ public class GameFlowManager : MonoBehaviour
         dialeg.SetActive(true);
         dialogueManager.isDialogueInici = true;
         currentDialogue = GetDialogue(currentDay, comandaIndex, DialogueType.Initial);
+
+        isDeliveryDialogue = false;
         dialogueManager.StartDialogue(currentDialogue);
     }
 
@@ -102,6 +120,12 @@ public class GameFlowManager : MonoBehaviour
         });
 
         comandaIndex++;
+
+        if (currentDay == 1 && comandaIndex == 1)
+        {
+            firstOrderCompleted = true;
+        }
+
         currentComanda = null;
         uiOrder.ClearUI();
         toDo.SetActive(false);
@@ -124,6 +148,8 @@ public class GameFlowManager : MonoBehaviour
 
         dialogueManager.isDialogueInici = false;
         dialeg.SetActive(true);
+
+        isDeliveryDialogue = false;
         dialogueManager.StartDialogue(result);
 
 
@@ -139,6 +165,12 @@ public class GameFlowManager : MonoBehaviour
 
     public void OnDialogueEnded()
     {
+        if (isDeliveryDialogue)
+        {
+            isDeliveryDialogue = false;
+            return;
+        }
+
         if (!dialogueManager.isDialogueInici && !waitingForFinalDialogue)
         {
             var npcManager = FindFirstObjectByType<NPCManager>();
@@ -166,10 +198,8 @@ public class GameFlowManager : MonoBehaviour
         {
             notEnough.SetActive(true);
 
-            currentDay--;
-
-            SetupDayNPCs(); 
-
+            SetupDayNPCs();
+            date.SetActive(true);
             return;
         }
 

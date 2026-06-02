@@ -7,6 +7,7 @@ public class Flower : MonoBehaviour
     private Image img;
     public FlowerType flowerType;
 
+
     void Awake()
     {
         img = GetComponent<Image>();

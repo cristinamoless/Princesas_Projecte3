@@ -23,9 +23,8 @@ public class SwitchScene : MonoBehaviour
 
     private void Start()
     {
-        text.text = " ";
+        
     }
-
     private void OnTriggerStay(Collider other)
     {
         text.text = "Donali a la F si vols muntar flors";

@@ -5,12 +5,22 @@ public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 {
     public GameObject flowerPrefab;
     public RectTransform tableArea;
-
+    public bool lockedInitially = false;
     private RectTransform currentFlower;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (ToolManager.activeTool != ToolManager.ToolType.Hand) return;
+
+        GameFlowManager flow = FindFirstObjectByType<GameFlowManager>();
+
+        if (flow != null && !flow.firstOrderCompleted)
+        {
+            if (lockedInitially)
+            {
+                return;
+            }
+        }
 
         GameObject clone = Instantiate(flowerPrefab, tableArea);
 
