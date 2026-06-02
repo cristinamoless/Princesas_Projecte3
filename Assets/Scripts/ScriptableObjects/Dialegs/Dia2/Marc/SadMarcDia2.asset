@@ -19,6 +19,6 @@ MonoBehaviour:
   - "Ja tornar\xE9 un altre dia, igual no m\u2019he explicat b\xE9 avui. "
   - "Vaig a pintar una estona\u2026"
   day: 2
-  orderIndex: 2
+  orderIndex: 1
   type: 2
   choices: []

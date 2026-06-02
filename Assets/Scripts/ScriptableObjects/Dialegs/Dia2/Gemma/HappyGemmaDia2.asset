@@ -18,6 +18,6 @@ MonoBehaviour:
   - "\xC9s perfecte, m\u2019encanta! Aqu\xED tens bonica."
   - "Espero veure\u2019t pel poble!"
   day: 2
-  orderIndex: 1
+  orderIndex: 0
   type: 1
   choices: []

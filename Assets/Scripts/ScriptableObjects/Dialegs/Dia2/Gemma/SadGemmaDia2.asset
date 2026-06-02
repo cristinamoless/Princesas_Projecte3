@@ -18,6 +18,6 @@ MonoBehaviour:
   - "Oh\u2026 no es el que m\u2019esperava\u2026 Tot teu no et preocupis, no li dir\xE9
     a ning\xFA\u2026"
   day: 2
-  orderIndex: 1
+  orderIndex: 0
   type: 2
   choices: []

@@ -21,6 +21,6 @@ MonoBehaviour:
   - "les meves flors preferides s\xF3n les roses, aix\xED que vull un ram ben maco,"
   - "si tens flors de muguet, tamb\xE9 m\u2019agradaria que posessin alguna\u2026"
   day: 2
-  orderIndex: 2
+  orderIndex: 1
   type: 0
   choices: []

@@ -19,7 +19,7 @@ MonoBehaviour:
   - "Escolta, no tinc res a fer la resta de la tarda, si vols t\u2019ajudo a recollir"
   - "i sopem juntes al restaurant del poble, jo et convido, \xE9s clar.\r"
   day: 2
-  orderIndex: 3
+  orderIndex: 2
   type: 4
   choices:
   - choiceText: " De veritat?! M\u2019encantaria, dona\u2019m un moment, tanco la

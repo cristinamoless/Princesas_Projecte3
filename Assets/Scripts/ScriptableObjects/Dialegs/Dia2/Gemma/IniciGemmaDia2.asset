@@ -19,6 +19,6 @@ MonoBehaviour:
   - Et vinc a demanar un ram de flors de muguet, que en tens?
   - "SI?! Quina il\xB7lusi\xF3, son les preferides de la meva \xE0via."
   day: 2
-  orderIndex: 1
+  orderIndex: 0
   type: 0
   choices: []

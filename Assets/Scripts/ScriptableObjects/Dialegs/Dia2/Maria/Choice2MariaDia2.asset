@@ -17,6 +17,6 @@ MonoBehaviour:
   sentences:
   - "Oh! Quina pena, bonica. No passa res. Espero veure\u2019t per aqu\xED."
   day: 2
-  orderIndex: 3
+  orderIndex: 2
   type: 5
   choices: []

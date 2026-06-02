@@ -18,7 +18,7 @@ public class GameFlowManager : MonoBehaviour
 
     public Comanda currentComanda;
     public int currentDay = 1;
-    private int comandaIndex = 0;
+    public int comandaIndex = 0;
 
     public DialogueManager dialogueManager;
     public DialogueManager dialogueManagerRepartidor;
@@ -173,6 +173,9 @@ public class GameFlowManager : MonoBehaviour
             return;
         }
 
+        comandaArea.hasTalked = false;
+        completedOrders.Clear(); 
+        lastOrderWasCorrect = false;
         var timeManager = FindFirstObjectByType<TimeManager>();
         timeManager.ResetDay();
     }
