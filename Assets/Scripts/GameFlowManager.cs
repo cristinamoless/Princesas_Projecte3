@@ -34,6 +34,7 @@ public class GameFlowManager : MonoBehaviour
     public bool firstOrderCompleted = false;
     private bool deliverySeenThisRun = false;
     private bool isDeliveryDialogue = false;
+    public Transform playerSpawn;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -47,12 +48,13 @@ public class GameFlowManager : MonoBehaviour
 
     public void StartDay()
     {
+
         currentDay++;
         comandaIndex = 0;
         deliverySeenThisRun = false;
-
+        RespawnPlayer();
         SetupDayNPCs();
-
+        
         date.SetActive(true);
         fiDia.SetActive(false);
         toDo.SetActive(false);
@@ -199,7 +201,7 @@ public class GameFlowManager : MonoBehaviour
             notEnough.SetActive(true);
 
             SetupDayNPCs();
-            date.SetActive(true);
+            RespawnPlayer();
             return;
         }
 
@@ -208,6 +210,7 @@ public class GameFlowManager : MonoBehaviour
         lastOrderWasCorrect = false;
         var timeManager = FindFirstObjectByType<TimeManager>();
         timeManager.ResetDay();
+        RespawnPlayer();
     }
 
     private void SetupDayNPCs()
@@ -247,6 +250,28 @@ public class GameFlowManager : MonoBehaviour
 
         return null;
     }
+
+    private void RespawnPlayer()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player == null) return;
+
+        CharacterController cc = player.GetComponent<CharacterController>();
+
+        if (cc != null)
+        {
+            cc.enabled = false;
+            player.transform.position = playerSpawn.position;
+            player.transform.rotation = playerSpawn.rotation;
+            cc.enabled = true;
+        }
+        else
+        {
+            player.transform.position = playerSpawn.position;
+            player.transform.rotation = playerSpawn.rotation;
+        }
+    }
     public void Update()
     {
         if (notEnough.activeSelf)
@@ -257,4 +282,6 @@ public class GameFlowManager : MonoBehaviour
             }
         }
     }
+    
+    
 }
