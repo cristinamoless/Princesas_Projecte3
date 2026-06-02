@@ -15,7 +15,7 @@ MonoBehaviour:
   flowerName: Margarida
   stars: 200
   seedPrice: 0
-  unlocked: 1
+  unlocked: 0
   availableDay: 1
   withLeaves: {fileID: 21300000, guid: 73703f63632b0104bbcb6b28ccf4b4ec, type: 3}
   withoutLeaves: {fileID: 21300000, guid: 2254696319cb89c41b8c1a0c645df678, type: 3}

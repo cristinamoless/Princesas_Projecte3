@@ -7493,7 +7493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3507552636372575025, guid: 6d5c7cda83eb32445ab8dfa93622506e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.57
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3507552636372575025, guid: 6d5c7cda83eb32445ab8dfa93622506e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13159,6 +13159,7 @@ MonoBehaviour:
   cc: {fileID: 2142881588}
   lastOrderWasCorrect: 0
   completedOrders: []
+  firstOrderCompleted: 0
 --- !u!4 &790506082
 Transform:
   m_ObjectHideFlags: 0
