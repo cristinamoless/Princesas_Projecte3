@@ -118,6 +118,17 @@ public class GameFlowManager : MonoBehaviour
     {
         bool correct = lastOrderWasCorrect;
 
+        var npcManager = FindFirstObjectByType<NPCManager>();
+        if (npcManager != null && npcManager.CurrentClient != null)
+        {
+            var npc = npcManager.CurrentClient.GetComponent<RockNPC>();
+
+            if (npc != null)
+            {
+                npc.SetReaction(correct);
+            }
+        }
+
         var list = currentDay == 1 ? database.day1Orders : database.day2Orders;
 
         completedOrders.Add(new CompletedOrderInfo
@@ -136,8 +147,6 @@ public class GameFlowManager : MonoBehaviour
         currentComanda = null;
         uiOrder.ClearUI();
         toDo.SetActive(false);
-
-
 
         Dialogue result = null;
 
@@ -159,12 +168,10 @@ public class GameFlowManager : MonoBehaviour
         isDeliveryDialogue = false;
         dialogueManager.StartDialogue(result);
 
-
         if (comandaIndex >= list.Count)
         {
             waitingForFinalDialogue = true;
         }
-
 
         comandaArea.hasTalked = false;
         cc.SetCursor();

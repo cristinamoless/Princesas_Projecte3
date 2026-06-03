@@ -6,6 +6,8 @@ public class RockNPC : MonoBehaviour
     public Transform exitPoint;
     public float walkSpeed = 2f;
     private bool isLeaving = false;
+    private bool isHappy = false;
+    private bool isSad = false;
 
     void Start()
     {
@@ -18,6 +20,9 @@ public class RockNPC : MonoBehaviour
     }
     public void LeaveShop()
     {
+        anim.SetBool("isHappy", false);
+        anim.SetBool("isSad", false);
+
         anim.SetBool("isWaving", false);
         anim.SetBool("isWalking", true);
 
@@ -42,5 +47,13 @@ public class RockNPC : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    public void SetReaction(bool happy)
+    {
+        isHappy = happy;
+        isSad = !happy;
+
+        anim.SetBool("isHappy", isHappy);
+        anim.SetBool("isSad", isSad);
     }
 }

@@ -13,6 +13,7 @@ public class NPCManager : MonoBehaviour
 
     private int currentClientIndex = 0;
     private GameObject currentClient;
+    public GameObject CurrentClient => currentClient;
 
     private Coroutine leaveRoutine;
 
