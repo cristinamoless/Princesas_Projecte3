@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
+  panellsATancar: []
 --- !u!4 &239770763
 Transform:
   m_ObjectHideFlags: 0

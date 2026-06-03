@@ -128,9 +128,12 @@ public class TutorialManager : MonoBehaviour
     public void RegisterArrow(TutorialArrow arrow)
     {
         if (!activeArrows.Contains(arrow))
+        {
             activeArrows.Add(arrow);
+        }
             
-        UpdateArrowVisibility(arrow);
+        int requiredID = GetCurrentArrowID();
+        arrow.gameObject.SetActive(arrow.arrowID == requiredID);
     }
 
     public void UnregisterArrow(TutorialArrow arrow)
@@ -148,28 +151,17 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
-    void UpdateArrowVisibility(TutorialArrow arrow)
-    {
-        int requiredID = GetCurrentArrowID();
-        arrow.gameObject.SetActive(arrow.arrowID == requiredID);
-    }
-
     int GetCurrentArrowID()
     {
-        switch (currentStep)
-        {
-            case Step.GoToWindow: return 0;
-            case Step.PressFToTalk: return 1;
-            case Step.GoToTable: return 2;
-            case Step.PressFToBuild: return 3;
-            case Step.DragFirstRose: return 4;
-            case Step.CutRose: return 5;
-            case Step.RotateRose: return 6;
-            case Step.ChooseBow: return 7;
-            case Step.DeleteRose: return 8;
-            case Step.ConfirmBouquet: return 9;
-            default: return -1;
-        }
+        if (currentStep == Step.GoToTable) return 2;
+        if (currentStep == Step.DragFirstRose) return 4;
+        if (currentStep == Step.CutRose) return 5;
+        if (currentStep == Step.RotateRose) return 6;
+        if (currentStep == Step.ChooseBow) return 7;
+        if (currentStep == Step.DeleteRose) return 8;
+        if (currentStep == Step.ConfirmBouquet) return 9;
+        
+        return -1;
     }
 
     public void NextStep()
@@ -184,71 +176,60 @@ public class TutorialManager : MonoBehaviour
     {
         if (tutorialPanel == null) return; 
 
+        ShowArrow(GetCurrentArrowID());
+
         switch (currentStep)
         {
             case Step.MoveInShop:
                 tutorialText.text = "Per moure’t dins la botiga utilitza WASD o ← ↑ →.";
-                ShowArrow(-1);
                 break;
 
             case Step.GoToWindow:
                 tutorialText.text = "Hi ha un client! Apropa’t a la finestra.";
-                ShowArrow(0);
                 break;
 
             case Step.PressFToTalk:
                 tutorialText.text = "Prem la tecla F per parlar amb el client :)";
-                ShowArrow(1);
                 break;
 
             case Step.GoToTable:
                 tutorialText.text = "Recorda la comanda i apropa’t a la taula de jardineria.";
-                ShowArrow(2);
                 break;
 
             case Step.PressFToBuild:
                 tutorialText.text = "Prem la tecla F per començar a muntar el ram!";
-                ShowArrow(3);
                 break;
 
             case Step.DragFirstRose:
                 tutorialText.text = "Amb aquesta eina podràs agafar flors i moure-les pel taulell. Arrossega una rosa!";
-                ShowArrow(4);
                 break;
 
             case Step.CutRose:
                 tutorialText.text = "Aquesta eina serveix per tallar les fulles i espines de les flors! Fes clic sobre la rosa!";
-                ShowArrow(5);
                 break;
 
             case Step.RotateRose:
                 tutorialText.text = "Gira les flors a l’angle que més t’agradi. Fes clic sobre la rosa i mou el ratolí!";
-                ShowArrow(6);
                 break;
 
             case Step.ChooseBow:
                 tutorialText.text = "Pots acabar de decorar el ram amb un llaç! Fes clic sobre le llaç i escull el color!";
-                ShowArrow(7);
                 break;
 
             case Step.DeleteRose:
                 tutorialText.text = "Si algo et molesta ho pots esborrar amb aquesta eina! Fes clic sobre la rosa!";
-                ShowArrow(8);
                 break;
 
             case Step.MakeFourRoses:
                 tutorialText.text = "Aquest client vol un ram de roses! Així que agafa quatre roses i posa’t creatiu!";
-                ShowArrow(-1);
                 break;
 
             case Step.ConfirmBouquet:
                 tutorialText.text = "Si al client li agraden els rams et pagarà en estrelles! Fes clic al botó per confirmar el ram!";
-                ShowArrow(9);
                 break;
 
             case Step.EndTutorial:
                 tutorialText.text = "Molta sort en el dia d’avui :)";
-                ShowArrow(-1);
                 break;
         }
     }
@@ -257,82 +238,28 @@ public class TutorialManager : MonoBehaviour
     {
         if (currentStep == Step.MoveInShop && !isWaitingTimer)
         {
-            StartCoroutine(WaitThreeSecondsPostMovement());
+            StartCoroutine(WaitSecondsPostMovement());
         }
     }
 
-    private IEnumerator WaitThreeSecondsPostMovement()
+    private IEnumerator WaitSecondsPostMovement()
     {
         isWaitingTimer = true;
-        yield return new WaitForSeconds(3f); 
+        yield return new WaitForSeconds(2f); 
         if (currentStep == Step.MoveInShop) 
             NextStep();
         isWaitingTimer = false;
     }
 
-    public void OnEnterWindowArea() 
-    { 
-        if (currentStep == Step.GoToWindow) 
-            NextStep(); 
-    }
-
-    public void OnTalkedToClient() 
-    { 
-        if (currentStep == Step.PressFToTalk) 
-            NextStep(); 
-    }
-
-    public void OnEnterTableArea() 
-    { 
-        if (currentStep == Step.GoToTable) 
-            NextStep(); 
-    }
-
-    public void OnPressedFToBuild() 
-    { 
-        if (currentStep == Step.PressFToBuild) 
-            NextStep(); 
-    }
-
-    public void OnDraggedFirstRose() 
-    { 
-        if (currentStep == Step.DragFirstRose) 
-            NextStep(); 
-    }
-
-    public void OnCutRose() 
-    { 
-        if (currentStep == Step.CutRose) 
-            NextStep(); 
-    }
-
-    public void OnRotateRose() 
-    { 
-        if (currentStep == Step.RotateRose) 
-            NextStep(); 
-    }
-
-    public void OnChooseBow() 
-    { 
-        if (currentStep == Step.ChooseBow) 
-            NextStep(); 
-    }
-
-    public void OnDeleteRose() 
-    { 
-        if (currentStep == Step.DeleteRose) 
-            NextStep(); 
-    }
-    
-    public void OnFourRoses() 
-    { 
-        if (currentStep == Step.MakeFourRoses) 
-            NextStep(); 
-    }
-
-    public void OnConfirmBouquet() 
-    { 
-        if (currentStep == Step.ConfirmBouquet) 
-            NextStep(); 
-    }
+    public void OnEnterWindowArea() { if (currentStep == Step.GoToWindow) NextStep(); }
+    public void OnTalkedToClient() { if (currentStep == Step.PressFToTalk) NextStep(); }
+    public void OnEnterTableArea() { if (currentStep == Step.GoToTable) NextStep(); }
+    public void OnPressedFToBuild() { if (currentStep == Step.PressFToBuild) NextStep(); }
+    public void OnDraggedFirstRose() { if (currentStep == Step.DragFirstRose) NextStep(); }
+    public void OnCutRose() { if (currentStep == Step.CutRose) NextStep(); }
+    public void OnRotateRose() { if (currentStep == Step.RotateRose) NextStep(); }
+    public void OnChooseBow() { if (currentStep == Step.ChooseBow) NextStep(); }
+    public void OnDeleteRose() { if (currentStep == Step.DeleteRose) NextStep(); }
+    public void OnFourRoses() { if (currentStep == Step.MakeFourRoses) NextStep(); }
+    public void OnConfirmBouquet() { if (currentStep == Step.ConfirmBouquet) NextStep(); }
 }
