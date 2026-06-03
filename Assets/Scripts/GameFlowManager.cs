@@ -50,6 +50,11 @@ public class GameFlowManager : MonoBehaviour
     {
 
         currentDay++;
+        if(currentDay == 3)
+        {
+            GameEnd();
+            return;
+        }
         comandaIndex = 0;
         deliverySeenThisRun = false;
         RespawnPlayer();
@@ -190,19 +195,10 @@ public class GameFlowManager : MonoBehaviour
     {
         bool hasEnoughStars = PlayerStars.Instance.totalStars >= GetMinimumStarsForNextDay();
 
-        if (CheckGameEnd())
-        {
-            StopAllFlow();
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
-            return;
-        }
-
         if (!hasEnoughStars)
         {
-            StopAllFlow();
             notEnough.SetActive(true);
             currentDay--;
-            return;
         }
 
         fiDia.SetActive(true);
@@ -222,20 +218,10 @@ public class GameFlowManager : MonoBehaviour
         SetupDayNPCs();
         RespawnPlayer();
     }
-    private void StopAllFlow()
+    private void GameEnd()
     {
-        comandaArea.hasTalked = false;
-        waitingForFinalDialogue = false;
-    }
-    private bool CheckGameEnd()
-    {
-        if (currentDay >= 2)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
-            return true;
-        }
 
-        return false;
+         UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
     }
 
     private void SetupDayNPCs()
