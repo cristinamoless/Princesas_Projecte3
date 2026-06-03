@@ -913,8 +913,8 @@ MonoBehaviour:
     Lara\r\n\r\nM\xDASICA\r\n\r\nAura Esp\xED\r\n\r\nEFECTES DE SO\r\n\r\nAura Esp\xED\r\n\r\r\r\n\n\n\n\nFET
     AMB UNITY\r\n\r\nGR\xC0CIES PER LA TEVA VISITA A LA FLORISTERIA\r\n\r\nFi"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
-  m_sharedMaterial: {fileID: -2018169135463679642, guid: d74dabc008f10e94e8dfa5d7b8bd1744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d850769280fff7d4ebf787ddd459ebaf, type: 2}
+  m_sharedMaterial: {fileID: 7785616692736242906, guid: d850769280fff7d4ebf787ddd459ebaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

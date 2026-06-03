@@ -22,6 +22,7 @@ public class ComandaArea : MonoBehaviour
             gameFlow.TalkClients();
             text.text = " ";
             FindFirstObjectByType<RockNPC>().StopWaving();
+            AudioManager.Instance.Play("Dialeg");
         }
 
         TutorialManager.Instance.OnEnterWindowArea();
