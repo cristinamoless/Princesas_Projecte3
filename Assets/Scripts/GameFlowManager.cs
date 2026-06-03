@@ -188,37 +188,54 @@ public class GameFlowManager : MonoBehaviour
 
     public void EndDay()
     {
-        fiDia.SetActive(true);
-        date.SetActive(false);
-        dialeg.SetActive(false);
-        uiOrder.ShowEndOfDay(completedOrders);
-        waitingForFinalDialogue = false;
-
         bool hasEnoughStars = PlayerStars.Instance.totalStars >= GetMinimumStarsForNextDay();
+
+        if (CheckGameEnd())
+        {
+            StopAllFlow();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
+            return;
+        }
 
         if (!hasEnoughStars)
         {
+            StopAllFlow();
             notEnough.SetActive(true);
             currentDay--;
+            return;
         }
 
+        fiDia.SetActive(true);
+        date.SetActive(false);
+        dialeg.SetActive(false);
+
+        uiOrder.ShowEndOfDay(completedOrders);
+        waitingForFinalDialogue = false;
+
         comandaArea.hasTalked = false;
-        completedOrders.Clear(); 
+        completedOrders.Clear();
         lastOrderWasCorrect = false;
+
         var timeManager = FindFirstObjectByType<TimeManager>();
-        CheckGameEnd();
         timeManager.ResetDay();
+
         SetupDayNPCs();
         RespawnPlayer();
-       
     }
-
-    private void CheckGameEnd()
+    private void StopAllFlow()
+    {
+        comandaArea.hasTalked = false;
+        waitingForFinalDialogue = false;
+    }
+    private bool CheckGameEnd()
     {
         if (currentDay >= 2)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
+            return true;
         }
+
+        return false;
     }
 
     private void SetupDayNPCs()

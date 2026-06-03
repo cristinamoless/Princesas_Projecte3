@@ -424,6 +424,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13277603}
   m_Mesh: {fileID: 5615035711567957222, guid: 20203c2a5b29b22499ec659f9d327726, type: 3}
+--- !u!1 &20608029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 686092392856947745, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+  m_PrefabInstance: {fileID: 1710018737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &20608030 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+  m_PrefabInstance: {fileID: 1710018737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &25547490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16589,7 +16599,7 @@ MonoBehaviour:
   - {fileID: 11349222}
   - {fileID: 461542522}
   - {fileID: 199912497}
-  - {fileID: 686092392856947745, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+  - {fileID: 20608029}
   - {fileID: 4672895548928504684}
   - {fileID: 8462825951330171365, guid: d4d7327faf1af5248899153cc6455dbb, type: 3}
   day1Clients:
@@ -16597,7 +16607,7 @@ MonoBehaviour:
   - {fileID: 461542522}
   - {fileID: 199912497}
   day2Clients:
-  - {fileID: 686092392856947745, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+  - {fileID: 20608029}
   - {fileID: 4672895548928504684}
   - {fileID: 8462825951330171365, guid: d4d7327faf1af5248899153cc6455dbb, type: 3}
   spawnPoint: {fileID: 696415387}
@@ -19007,6 +19017,7 @@ Transform:
   - {fileID: 825878826}
   - {fileID: 1772929850}
   - {fileID: 540354884}
+  - {fileID: 20608030}
   - {fileID: 4672895548928504683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27756,6 +27767,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98b96c18ed829474fa457ac4e43676fb, type: 3}
   m_PrefabInstance: {fileID: 1709671429}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1710018737
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1151892031}
+    m_Modifications:
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -114.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194579
+      objectReference: {fileID: 0}
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.69453615
+      objectReference: {fileID: 0}
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 87.981
+      objectReference: {fileID: 0}
+    - target: {fileID: 202290116203796123, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482352216517373434, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: exitPoint
+      value: 
+      objectReference: {fileID: 117388150}
+    - target: {fileID: 686092392856947745, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
+      propertyPath: m_Name
+      value: Gemma
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd3a1662645665c4eab8af9faa905e29, type: 3}
 --- !u!1 &1712998742
 GameObject:
   m_ObjectHideFlags: 0
