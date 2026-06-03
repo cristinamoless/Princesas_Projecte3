@@ -24,6 +24,11 @@ public class TimeManager : MonoBehaviour
     public Vector3 afternoonRotation = new Vector3(60f, 30f, 0f);
     public Vector3 eveningRotation = new Vector3(10f, 30f, 0f);
 
+    [Header("Materials Skybox (Brusc)")]
+    public Material morningSkyboxMaterial;
+    public Material afternoonSkyboxMaterial;
+    public Material eveningSkyboxMaterial;
+
     [Header("Smooth Transition")]
     public float transitionSpeed = 2f;
 
@@ -46,20 +51,32 @@ public class TimeManager : MonoBehaviour
             targetColor = morningColor;
             targetIntensity = 1.2f;
             targetRotation = Quaternion.Euler(morningRotation);
+
+            if (morningSkyboxMaterial != null) 
+                RenderSettings.skybox = morningSkyboxMaterial;
         }
         else if (hour < 17)
         {
             targetColor = afternoonColor;
             targetIntensity = 1.5f;
             targetRotation = Quaternion.Euler(afternoonRotation);
+
+            if (afternoonSkyboxMaterial != null) 
+                RenderSettings.skybox = afternoonSkyboxMaterial;
         }
         else
         {
             targetColor = eveningColor;
             targetIntensity = 0.8f;
             targetRotation = Quaternion.Euler(eveningRotation);
+
+            if (eveningSkyboxMaterial != null) 
+                RenderSettings.skybox = eveningSkyboxMaterial;
         }
+
+        DynamicGI.UpdateEnvironment();
     }
+
     void Update()
     {
         sunLight.color = Color.Lerp(sunLight.color, targetColor, Time.deltaTime * transitionSpeed);
@@ -77,6 +94,10 @@ public class TimeManager : MonoBehaviour
         targetColor = morningColor;
         targetIntensity = 1.2f;
         targetRotation = Quaternion.Euler(morningRotation);
+        
+        if (morningSkyboxMaterial != null) 
+            RenderSettings.skybox = morningSkyboxMaterial;
+            
+        DynamicGI.UpdateEnvironment();
     }
-
 }

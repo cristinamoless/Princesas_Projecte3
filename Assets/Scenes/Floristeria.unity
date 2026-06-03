@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 56954819b59165e4d966ba0316da6bc0, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -7695,7 +7695,6 @@ MonoBehaviour:
   custom: CreacioPersonatje
   shop: Floristeria
   start: MenuInicial
-  text: {fileID: 0}
   isLoading: 0
 --- !u!65 &474633872
 BoxCollider:
@@ -12987,7 +12986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400c5c53741ed0b418bfe5cb964e3137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   gameFlow: {fileID: 790506081}
   hasTalked: 0
 --- !u!1001 &774702313
@@ -30045,7 +30043,6 @@ MonoBehaviour:
   custom: CreacioPersonatge
   shop: Floristeria
   start: MenuInicial
-  text: {fileID: 0}
   isLoading: 0
 --- !u!114 &1783627090
 MonoBehaviour:
@@ -36584,6 +36581,9 @@ MonoBehaviour:
   morningRotation: {x: 25, y: 30, z: 0}
   afternoonRotation: {x: 60, y: 30, z: 0}
   eveningRotation: {x: 10, y: 30, z: 0}
+  morningSkyboxMaterial: {fileID: 2100000, guid: 6f13bf200c142ae4dab879d66569c818, type: 2}
+  afternoonSkyboxMaterial: {fileID: 2100000, guid: cd545f7112217ec4eabad561a155ce14, type: 2}
+  eveningSkyboxMaterial: {fileID: 2100000, guid: 56954819b59165e4d966ba0316da6bc0, type: 2}
   transitionSpeed: 0.5
 --- !u!4 &2142189409
 Transform:
