@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &379451034270642544
+--- !u!1001 &104518200443509427
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7194579
+      value: 0.71945786
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.69453615
+      value: 0.6945361
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       propertyPath: m_LocalRotation.z
@@ -50,40 +50,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       propertyPath: m_Name
-      value: Gemm
+      value: NPC2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3131570516479695135, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 524abca58f2ed814bbaf73330635d7d1, type: 2}
+      objectReference: {fileID: 2100000, guid: 219aaab1c86a3d44fbe9ceac11837052, type: 2}
     - target: {fileID: 6815684580746065702, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: f3a7da73aee96b748bae8bd8dec999bf, type: 2}
+      objectReference: {fileID: 2100000, guid: 35498c29aff51cd4db33f5f35edc0458, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7664418977733440660}
+      addedObject: {fileID: 3345897044708029682}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6718253866106972608}
   m_SourcePrefab: {fileID: 100100000, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
---- !u!1 &686092392856947745 stripped
+--- !u!1 &986916612079790050 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 55da5c2d930ff344f9e7bcd745f0b2e3, type: 3}
-  m_PrefabInstance: {fileID: 379451034270642544}
+  m_PrefabInstance: {fileID: 104518200443509427}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7664418977733440660
+--- !u!95 &3345897044708029682
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686092392856947745}
+  m_GameObject: {fileID: 986916612079790050}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e81788777eda39543985da4fe92c9c5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: e3e6f67847c91f8478143909fe6dfef5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -95,3 +102,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6718253866106972608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986916612079790050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e528ad9e808a342939528e4f2f998d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  leftX: -10
+  rightX: 10

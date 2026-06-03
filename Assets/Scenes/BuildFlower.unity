@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerPrefab: {fileID: 999208148}
   tableArea: {fileID: 1636672686}
-  lockedInitially: 0
+  lockedInitially: 1
   flowerType: {fileID: 11400000, guid: bf07348c295a546499f41c2c42f562da, type: 2}
 --- !u!114 &999208153
 MonoBehaviour:
