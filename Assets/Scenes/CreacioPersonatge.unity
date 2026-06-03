@@ -2409,6 +2409,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1509447919}
+  musicaNormal: {fileID: 8300000, guid: ed01299bfd268d645b6b66f07e1ae9a4, type: 3}
+  musicaBuildFlower: {fileID: 8300000, guid: 1e1b33fe79f7e5f4c8b6b59ad990216a, type: 3}
 --- !u!1001 &1487614079
 PrefabInstance:
   m_ObjectHideFlags: 0

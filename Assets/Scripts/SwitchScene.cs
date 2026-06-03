@@ -8,7 +8,6 @@ public class SwitchScene : MonoBehaviour
     public string custom = "CreacioPersonatge";
     public string shop = "Floristeria";
     public string start = "MenuInicial";
-    public TMP_Text text;
     public bool isLoading = false;
 
     private void OnEnable()
@@ -21,31 +20,32 @@ public class SwitchScene : MonoBehaviour
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
 
-    private void Start()
-    {
-        
-    }
     private void OnTriggerStay(Collider other)
     {
-        text.text = "Donali a la F si vols muntar flors";
 
         if (Input.GetKeyDown(KeyCode.F) && !isLoading)
         {
             isLoading = true;
+
+
+            if (TutorialManager.Instance != null)
+            {
+                TutorialManager.Instance.OnEnterTableArea();
+            }
+
+            if (MusicManager.instance != null)
+            {
+                MusicManager.instance.CanviarAMusicaBuild();
+            }
+
             SceneManager.LoadScene(build, LoadSceneMode.Additive);
         }
-        
-        TutorialManager.Instance.OnEnterTableArea();
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        text.text = " ";
-    }
 
     public void closeBuild()
     {
-        AudioManager.Instance.Play("Clic");
+        if (AudioManager.Instance != null) AudioManager.Instance.Play("Clic");
         SceneManager.UnloadSceneAsync(build);
     }
 
@@ -54,13 +54,17 @@ public class SwitchScene : MonoBehaviour
         if (scene.name == build)
         {
             isLoading = false;
-            text.text = " ";
+
+            if (MusicManager.instance != null)
+            {
+                MusicManager.instance.CanviarAMusicaNormal();
+            }
         }
     }
 
     public void shopScene()
     {
-        AudioManager.Instance.Play("Clic");
+        if (AudioManager.Instance != null) AudioManager.Instance.Play("Clic");
         SceneManager.LoadScene(shop);
         isLoading = false;
     }

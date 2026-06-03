@@ -6,6 +6,10 @@ public class MusicManager : MonoBehaviour
 
     public AudioSource musicSource;
 
+    [Header("Cançons")]
+    public AudioClip musicaNormal;
+    public AudioClip musicaBuildFlower;
+
     void Awake()
     {
         if (instance != null)
@@ -17,9 +21,30 @@ public class MusicManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
 
-        if (musicSource != null && !musicSource.isPlaying)
+        if (musicSource != null && musicaNormal != null && !musicSource.isPlaying)
         {
+            musicSource.clip = musicaNormal;
             musicSource.Play();
         }
+    }
+
+    public void CanviarAMusicaBuild()
+    {
+        if (musicSource == null || musicaBuildFlower == null) return;
+        if (musicSource.clip == musicaBuildFlower) return; 
+
+        musicSource.Stop();
+        musicSource.clip = musicaBuildFlower;
+        musicSource.Play();
+    }
+
+    public void CanviarAMusicaNormal()
+    {
+        if (musicSource == null || musicaNormal == null) return;
+        if (musicSource.clip == musicaNormal) return; 
+
+        musicSource.Stop();
+        musicSource.clip = musicaNormal;
+        musicSource.Play();
     }
 }

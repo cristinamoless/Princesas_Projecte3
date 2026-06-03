@@ -36,6 +36,9 @@ public class TutorialManager : MonoBehaviour
     private bool isWaitingTimer = false;
     private bool endingTriggered = false;
 
+    [Header("Configuració de Temps")]
+    public float tempsMissatgeFinal = 8f; 
+
     void Awake()
     {
         Instance = this;
@@ -103,7 +106,7 @@ public class TutorialManager : MonoBehaviour
         if (tutorialPanel != null) tutorialPanel.SetActive(true);
         ShowStepUI();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(tempsMissatgeFinal);
 
         currentStep = Step.DisabledForever;
         savedStep = currentStep;
@@ -245,7 +248,7 @@ public class TutorialManager : MonoBehaviour
     private IEnumerator WaitSecondsPostMovement()
     {
         isWaitingTimer = true;
-        yield return new WaitForSeconds(2f); 
+        yield return new WaitForSeconds(1f); 
         if (currentStep == Step.MoveInShop) 
             NextStep();
         isWaitingTimer = false;
