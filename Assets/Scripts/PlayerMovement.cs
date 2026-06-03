@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
                 targetRotation,
                 rotationSpeed * Time.deltaTime
             );
+            
+            TutorialManager.Instance.OnPlayerMoved();
         }
     }
 }

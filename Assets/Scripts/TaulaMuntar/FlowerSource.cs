@@ -54,6 +54,7 @@ public class FlowerSource : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         currentFlower.anchoredPosition = localPos;
         currentFlower.SetAsLastSibling();
         AudioManager.Instance.Play("ArrosegarFlor");
+        TutorialManager.Instance.OnDraggedFirstRose();
     }
 
 

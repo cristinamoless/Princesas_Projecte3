@@ -23,6 +23,8 @@ public class ComandaArea : MonoBehaviour
             text.text = " ";
             FindFirstObjectByType<RockNPC>().StopWaving();
         }
+
+        TutorialManager.Instance.OnEnterWindowArea();
     }
     private void OnTriggerExit(Collider other)
     {

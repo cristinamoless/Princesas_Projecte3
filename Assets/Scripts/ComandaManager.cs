@@ -82,6 +82,7 @@ public class ComandaManager : MonoBehaviour
         else
         {
             confirmButton.SetActive(true);
+            TutorialManager.Instance.OnFourRoses();
         }
     }
 

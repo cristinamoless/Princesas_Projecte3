@@ -18,5 +18,6 @@ public class LazoManager : MonoBehaviour
         currentBow.AddComponent<DragDrop>();
 
         colorPanel.SetActive(false);
+        TutorialManager.Instance.OnChooseBow();
     }
 }

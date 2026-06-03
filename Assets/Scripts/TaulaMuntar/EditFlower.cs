@@ -40,6 +40,7 @@ public class EditFlower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
             rt.Rotate(0, 0, rotateAngle);
 
             lastAngle = currentAngle;
+            TutorialManager.Instance.OnRotateRose();
         }
     }
 
@@ -56,11 +57,13 @@ public class EditFlower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         {
             flower.RemoveLeaves();
             AudioManager.Instance.Play("TallarFulles");
+            TutorialManager.Instance.OnCutRose();
         }
         if (ToolManager.activeTool == ToolManager.ToolType.Delete)
         {
             AudioManager.Instance.Play("EliminarFlor");
             Destroy(gameObject);
+            TutorialManager.Instance.OnDeleteRose();
         }
     }
 

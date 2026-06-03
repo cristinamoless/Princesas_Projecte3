@@ -14242,6 +14242,18 @@ MonoBehaviour:
           m_StringArgument: Clic
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1533905262}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: StartTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &849409531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17270,6 +17282,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Clic
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1533905262}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: OnTalkedToClient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1033580214
@@ -21981,12 +22005,12 @@ RectTransform:
   - {fileID: 1089014982}
   - {fileID: 661903538}
   - {fileID: 419263276}
-  - {fileID: 1658427509}
   - {fileID: 1874505365}
   - {fileID: 110011287}
-  - {fileID: 1593887660}
   - {fileID: 492036515}
   - {fileID: 1533905259}
+  - {fileID: 1658427509}
+  - {fileID: 1593887660}
   - {fileID: 1375369794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24883,6 +24907,7 @@ GameObject:
   - component: {fileID: 1533905259}
   - component: {fileID: 1533905261}
   - component: {fileID: 1533905260}
+  - component: {fileID: 1533905262}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -24949,6 +24974,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533905258}
   m_CullTransparentMesh: 1
+--- !u!114 &1533905262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533905258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbebb330cc865944b1f1df9a8c5cb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialPanel: {fileID: 1533905258}
+  tutorialText: {fileID: 1606848568}
+  currentStep: 0
 --- !u!1001 &1534378814
 PrefabInstance:
   m_ObjectHideFlags: 0

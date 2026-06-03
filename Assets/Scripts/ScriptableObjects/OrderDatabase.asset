@@ -29,7 +29,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
     - {fileID: 11400000, guid: a74fc8d214dea0f4e9b985b990b069d0, type: 2}
     reward: 200
-  - nomComanda: X2 ROSES             X2 MARGARIDES
+  - nomComanda: X2 ROSES                  X2 MARGARIDES
     clientName: "Lloren\xE7"
     requiredFlowers:
     - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
@@ -46,7 +46,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: bf07348c295a546499f41c2c42f562da, type: 2}
     - {fileID: 11400000, guid: bf07348c295a546499f41c2c42f562da, type: 2}
     reward: 400
-  - nomComanda: X2 MUGUET            X2 ROSES
+  - nomComanda: X2 MUGUET               X2 ROSES
     clientName: Marc
     requiredFlowers:
     - {fileID: 11400000, guid: bf07348c295a546499f41c2c42f562da, type: 2}
@@ -54,7 +54,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
     - {fileID: 11400000, guid: 31d1c4e9a2c09af4e9617f2a00931caf, type: 2}
     reward: 300
-  - nomComanda: X2 MUGUET            X2 MARGARIDES
+  - nomComanda: X2 MUGUET               X2 MARGARIDES
     clientName: Maria
     requiredFlowers:
     - {fileID: 11400000, guid: bf07348c295a546499f41c2c42f562da, type: 2}
