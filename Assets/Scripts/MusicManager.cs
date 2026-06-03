@@ -14,8 +14,7 @@ public class MusicManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Destroy(gameObject);
-            return;
+            Destroy(instance.gameObject);
         }
 
         instance = this;

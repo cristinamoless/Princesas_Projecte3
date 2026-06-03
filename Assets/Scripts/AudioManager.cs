@@ -21,8 +21,7 @@ public class AudioManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(gameObject);
-            return;
+            Destroy(Instance.gameObject);
         }
 
         Instance = this;
@@ -33,8 +32,11 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = Array.Find(sounds, x => x.name == soundName);
 
-        source.volume = s.volume;
-        source.pitch = s.pitch;
-        source.PlayOneShot(s.clip);
+        if (s != null && source != null)
+        {
+            source.volume = s.volume;
+            source.pitch = s.pitch;
+            source.PlayOneShot(s.clip);
+        }
     }
 }
