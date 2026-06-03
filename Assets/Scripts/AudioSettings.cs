@@ -12,13 +12,13 @@ public class AudioSettings : MonoBehaviour
     void Start()
     {
         float musicVol = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        musicSlider.value = musicVol;
+        musicSlider.SetValueWithoutNotify(musicVol);
         SetMusicVolume(musicVol);
         musicSlider.onValueChanged.RemoveAllListeners();
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
 
-        float audioVol = PlayerPrefs.GetFloat("audioVolume", 1f);
-        audioSlider.value = audioVol;
+        float audioVol = PlayerPrefs.GetFloat("AudioVolume", 1f);
+        audioSlider.SetValueWithoutNotify(audioVol);
         SetAudioVolume(audioVol);
         audioSlider.onValueChanged.RemoveAllListeners();
         audioSlider.onValueChanged.AddListener(SetAudioVolume);
