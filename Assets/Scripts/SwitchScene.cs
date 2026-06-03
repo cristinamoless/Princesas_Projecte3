@@ -31,7 +31,6 @@ public class SwitchScene : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F) && !isLoading)
         {
-            TutorialManager.Instance.OnPressedFToBuild();
             isLoading = true;
             SceneManager.LoadScene(build, LoadSceneMode.Additive);
         }

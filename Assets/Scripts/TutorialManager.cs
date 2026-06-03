@@ -6,6 +6,7 @@ using System.Collections;
 public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager Instance;
+    public static Step savedStep = Step.None;
 
     public GameObject tutorialPanel;
     public TextMeshProUGUI tutorialText;
@@ -27,77 +28,100 @@ public class TutorialManager : MonoBehaviour
         DeleteRose,
         MakeFourRoses,
         ConfirmBouquet,
-        EndTutorial
+        EndTutorial,
+        DisabledForever
     }
 
     public Step currentStep = Step.None;
     private bool isWaitingTimer = false;
+    private bool endingTriggered = false;
 
     void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
-        CheckAndStart();
-    }
-
-    void OnEnable()
-    {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
-    {
-        FindUIReferences();
-        if (currentStep != Step.None)
+        if (savedStep == Step.DisabledForever)
         {
+            currentStep = Step.DisabledForever;
+            if (tutorialPanel != null) tutorialPanel.SetActive(false);
+            return;
+        }
+
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Floristeria")
+        {
+            if (savedStep == Step.None)
+            {
+                currentStep = Step.None;
+                if (tutorialPanel != null) tutorialPanel.SetActive(false);
+            }
+            else
+            {
+                currentStep = savedStep;
+                if (currentStep != Step.None)
+                {
+                    if (tutorialPanel != null) tutorialPanel.SetActive(true);
+                    ShowStepUI();
+                }
+            }
+        }
+        else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "BuildFlower")
+        {
+            currentStep = Step.DragFirstRose;
+            savedStep = currentStep;
+
+            if (tutorialPanel != null) tutorialPanel.SetActive(true);
             ShowStepUI();
         }
     }
 
-    void FindUIReferences()
+    void Update()
     {
-        if (tutorialPanel == null || tutorialText == null)
+        if (currentStep == Step.DisabledForever) return;
+
+        var flow = FindFirstObjectByType<GameFlowManager>();
+        if (flow != null)
         {
-            Canvas[] canvases = FindObjectsByType<Canvas>(FindObjectsSortMode.None);
-            foreach (Canvas canvas in canvases)
+            if (flow.currentDay > 1 || (flow.currentDay == 1 && flow.comandaIndex >= 1))
             {
-                Transform panelTransform = canvas.transform.Find("TutorialPanel"); 
-                if (panelTransform != null)
+                if (!endingTriggered)
                 {
-                    tutorialPanel = panelTransform.gameObject;
-                    tutorialText = tutorialPanel.GetComponentInChildren<TextMeshProUGUI>();
-                    break;
+                    StartCoroutine(ShowEndMessageAndDisable());
                 }
             }
         }
     }
 
-    void CheckAndStart()
+    private IEnumerator ShowEndMessageAndDisable()
     {
+        endingTriggered = true;
+        currentStep = Step.EndTutorial;
+        savedStep = currentStep;
+
+        if (tutorialPanel != null) tutorialPanel.SetActive(true);
+        ShowStepUI();
+
+        yield return new WaitForSeconds(3f);
+
+        currentStep = Step.DisabledForever;
+        savedStep = currentStep;
+
+        if (tutorialPanel != null) tutorialPanel.SetActive(false);
+    }
+
+    public void TriggerStartTutorial()
+    {
+        if (savedStep == Step.DisabledForever) return;
+
         var flow = FindFirstObjectByType<GameFlowManager>();
         if (flow != null && flow.currentDay == 1 && flow.comandaIndex == 0)
         {
-            StartTutorial();
-        }
-        else
-        {
-            if (tutorialPanel != null) tutorialPanel.SetActive(false);
-            currentStep = Step.None;
+            currentStep = Step.MoveInShop;
+            savedStep = currentStep;
+            if (tutorialPanel != null) tutorialPanel.SetActive(true);
+            ShowStepUI();
         }
     }
 
@@ -148,25 +172,17 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
-    public void StartTutorial()
-    {
-        currentStep = Step.MoveInShop;
-        FindUIReferences();
-        ShowStepUI();
-    }
-
     public void NextStep()
     {
+        if (currentStep == Step.DisabledForever) return;
         currentStep++;
+        savedStep = currentStep;
         ShowStepUI();
     }
 
     void ShowStepUI()
     {
-        if (tutorialPanel == null) FindUIReferences();
         if (tutorialPanel == null) return; 
-
-        tutorialPanel.SetActive(true);
 
         switch (currentStep)
         {
@@ -211,7 +227,7 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case Step.ChooseBow:
-                tutorialText.text = "Pots acabar de decorar el ram amb un llaç! Fes clic sobre el llaç i escull el color!";
+                tutorialText.text = "Pots acabar de decorar el ram amb un llaç! Fes clic sobre le llaç i escull el color!";
                 ShowArrow(7);
                 break;
 

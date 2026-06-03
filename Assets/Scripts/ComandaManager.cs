@@ -16,6 +16,7 @@ public class ComandaManager : MonoBehaviour
         flow = FindFirstObjectByType<GameFlowManager>();
         currentComanda = flow.currentComanda;
         switchScene = FindFirstObjectByType<SwitchScene>();
+        TutorialManager.Instance.OnPressedFToBuild();
     }
 
     public bool CheckOrder()

@@ -41,7 +41,10 @@ public class PlayerMovement : MonoBehaviour
                 rotationSpeed * Time.deltaTime
             );
             
-            TutorialManager.Instance.OnPlayerMoved();
+            if (TutorialManager.Instance != null)
+            {
+                TutorialManager.Instance.OnPlayerMoved();
+            }
         }
     }
 }
