@@ -206,9 +206,19 @@ public class GameFlowManager : MonoBehaviour
         completedOrders.Clear(); 
         lastOrderWasCorrect = false;
         var timeManager = FindFirstObjectByType<TimeManager>();
+        CheckGameEnd();
         timeManager.ResetDay();
         SetupDayNPCs();
         RespawnPlayer();
+       
+    }
+
+    private void CheckGameEnd()
+    {
+        if (currentDay >= 2)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
+        }
     }
 
     private void SetupDayNPCs()
